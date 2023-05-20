@@ -1,0 +1,37 @@
+
+footer{
+  background-color: #002C3E;
+  margin-top: auto;
+}
+footer p{
+  margin: 0;
+  color: white;
+  padding-top: 10px;
+  font-size: 1em;
+}
+footer .container{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction: column-reverse;
+  text-align: center;
+}
+
+footer .container img{
+  height: 43px;
+  width: 100px;
+  margin: 15px;
+}
+
+footer .icons{
+  color:#DBDBDB;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3px 0 3px 0;
+  padding: 0;
+}
+
+footer .icons ion-icon{
+  margin: 15px
+}
