@@ -14,13 +14,19 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatSelectModule} from "@angular/material/select";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatButtonModule} from "@angular/material/button";
+import { HeaderProfileComponent } from './components/header-profile/header-profile.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    RegisterComponent
+    RegisterComponent,
+    HeaderProfileComponent,
+    EditProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +40,7 @@ import {MatButtonModule} from "@angular/material/button";
     MatCheckboxModule,
     FormsModule,
     MatButtonModule,
+    MatToolbarModule,
 
 
   ],

@@ -1,0 +1,142 @@
+
+
+body {
+  background: #FFFFFF;
+  height: auto;
+}
+
+.edit img{
+  margin: 10px;
+  width: 30vw;
+  height: 30vw;
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 50%;
+}
+.edit .container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+button{
+  background: #002C3E;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin: 5px;
+  padding: 5px 10px
+}
+button:hover{
+  background: #1772cd;
+}
+.info{
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+h3{
+  border-bottom: 1px solid black;
+  width: max-content;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.info .inputbox{
+  display: flex;
+  flex-direction: column;
+}
+
+input{
+  background: #EBF2FA;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 30px;
+  margin: 0 10px 15px;
+}
+
+.changepass .inputbox{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.changepass{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 10px 0 30px 0;
+  padding: 20px;
+}
+
+@media (min-width: 720px) {
+
+
+  .edit section{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
+    margin: 20px;
+  }
+  .changepass{
+    flex-direction: row;
+    align-items: start;
+    border: none;
+    width: 80%;
+    margin:20px auto;
+  }
+  .changepass .inputbox{
+    margin: 0 20px 0 20px;
+    width: 65%;
+  }
+  .changepass section{
+    display: flex;
+    align-items: end;
+    width: 50%;
+  }
+  .infoper{
+    width: 50vw;
+  }
+  form{
+    width: 100%;
+  }
+  .info{
+    border: none;
+    width: 90%;
+  }
+  .info input{
+    width: 80%;
+  }
+  .changepass input{
+    width: 95%;
+  }
+  button{
+    width: 80%;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
