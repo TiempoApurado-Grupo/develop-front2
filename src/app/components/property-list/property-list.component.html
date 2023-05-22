@@ -1,0 +1,58 @@
+<div class="main-body">
+
+  <mat-card-title>
+    <p>My Properties</p>
+  </mat-card-title>
+
+  <div class="first">
+    <mat-form-field class="filter" appearance="outline">
+      <mat-label>Search</mat-label>
+      <input matInput type="text" >
+      <mat-icon matPrefix>search</mat-icon>
+    </mat-form-field> &nbsp;
+    <button mat-raised-button color="primary" routerLink="/food-trucks/new">Add Property</button>
+  </div>
+
+  <div class="table-container">
+
+    <table>
+      <ng-container matColumnDef="id">
+        <tr>
+          <td>
+            <mat-card>
+              <div fxLayout="row">
+                <div fxFlex="50%">
+                  <img mat-card-image src="https://i.ibb.co/599qhjk/propiedad1.png" alt="propiedad1">
+                </div>
+                <div fxFlex="50%">
+                  <p> Contenido de la</p>
+                </div>
+              </div>
+            </mat-card>
+          </td>
+        </tr>
+      </ng-container>
+
+      <ng-container matColumnDef="id">
+        <tr>
+          <td>
+            <mat-card>
+              <div fxLayout="row">
+                <div fxFlex="50%">
+                  <img mat-card-image src="https://i.ibb.co/nzpN7cf/propiedad2.png" alt="propiedad1">
+                </div>
+                <div fxFlex="50%">
+                  <p> Contenido de la</p>
+                </div>
+              </div>
+            </mat-card>
+          </td>
+        </tr>
+      </ng-container>
+
+
+    </table>
+
+  </div>
+</div>
+
