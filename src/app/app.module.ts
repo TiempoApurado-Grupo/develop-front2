@@ -13,6 +13,10 @@ import {FormsModule} from "@angular/forms";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
+import { ListTenantsComponent } from './components/list-tenants/list-tenants.component';
+import {MatCardModule} from "@angular/material/card";
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -20,7 +24,8 @@ import {MatNativeDateModule} from "@angular/material/core";
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    AddTenantComponent
+    AddTenantComponent,
+    ListTenantsComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,10 @@ import {MatNativeDateModule} from "@angular/material/core";
     FormsModule,
     ReactiveFormsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatCardModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
