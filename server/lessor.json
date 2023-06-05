@@ -1,0 +1,63 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email":"julio@upc.edu.pe",
+      "password":"@@UPCFAN"
+    },
+    {
+      "id": 2,
+      "email":"juan@upc.edu.pe",
+      "password":"@@juancito123"
+    },
+    {
+      "id": 3,
+      "email":"Ana@upc.edu.pe",
+      "password":"AnaGod123"
+    }
+  ],
+  "profiles":[
+    {
+      "id": 1,
+      "name": "Julio Asillo",
+      "photoUrl": "https://unsplash.com/es/fotos/a6PMA5JEmWE",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "name": "Juan Perez",
+      "photoUrl": "https://unsplash.com/es/fotos/a6PMA5JEmWE",
+      "userId": 2
+    },
+    {
+      "id": 3,
+      "name": "Ana Castillejo",
+      "photoUrl": "https://unsplash.com/es/fotos/rDEOVtE7vOs",
+      "userId": 3
+    }
+  ],
+  "tenants":[
+    {
+      "id": 1,
+      "profileId": 1
+    },
+    {
+      "id": 2,
+      "profileId": 2
+    }
+  ],
+  "lessor": [
+    {
+      "id": 1,
+      "profileId": 3,
+      "tenants":[
+        {
+          "tenantId": 1
+        },
+        {
+          "tenantId": 2
+        }
+      ]
+    }
+  ]
+}
