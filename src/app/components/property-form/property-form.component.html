@@ -1,0 +1,94 @@
+<mat-card>
+  <mat-card-title>
+    Add Property
+  </mat-card-title>
+  <form>
+    <mat-card-content>
+      <div class="row">
+        <mat-form-field appearance="outline" class="custom-field">
+          <mat-label>Title</mat-label>
+          <input matInput type="text" placeholder="Enter a title of your property" formControlName="ownerFirstName" required >
+        </mat-form-field> &nbsp;
+      </div>
+
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Cell phone</mat-label>
+          <input matInput type="text" placeholder="Enter a mobile number" formControlName="ownerFirstName" required>
+        </mat-form-field> &nbsp;
+        <mat-form-field appearance="outline">
+          <mat-label>Property category</mat-label>
+          <input matInput type="text" placeholder="Enter a property category" formControlName="ownerLastName" required>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <p>Property Location</p>
+      </div>
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Property address</mat-label>
+          <input matInput type="text" placeholder="Enter an address" formControlName="brandName" required>
+        </mat-form-field> &nbsp;
+        <mat-form-field appearance="outline">
+          <mat-label>Property distric</mat-label>
+          <input matInput type="text" placeholder="Enter a district" formControlName="email" required>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <p>Characteristics of the property</p>
+      </div>
+      <div class="row" >
+        <mat-form-field appearance="outline">
+          <mat-label>Bedrooms</mat-label>
+          <input matInput type="text" placeholder="Bedrooms" formControlName="websiteUrl">
+        </mat-form-field> &nbsp;
+        <mat-form-field appearance="outline">
+          <mat-label>Bathrooms</mat-label>
+          <input matInput type="text" placeholder="Bathrooms" formControlName="menuUrl">
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Others</mat-label>
+          <input matInput type="text" placeholder="Others" formControlName="email" required>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <p>Visiting hours</p>
+      </div>
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Available times</mat-label>
+          <textarea matInput
+                    placeholder="e.g Tuesday 10am-6pm"></textarea>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <p>Property price</p>
+      </div>
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Price</mat-label>
+          <input matInput type="text" placeholder="Enter a price" formControlName="brandName" required>
+          <mat-icon matPrefix style="color:#064789">payments</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <p>Add photo</p>
+      </div>
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Photo</mat-label>
+          <input matInput type="url" placeholder="Enter a photo" formControlName="brandName" required>
+          <mat-icon matPrefix style="color:#064789">image</mat-icon>
+        </mat-form-field>
+      </div>
+      <mat-card-actions>
+        <button mat-raised-button color="warn">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">Save</button>
+      </mat-card-actions>
+
+    </mat-card-content>
+  </form>
+</mat-card>
+
