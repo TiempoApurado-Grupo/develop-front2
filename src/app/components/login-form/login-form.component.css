@@ -1,0 +1,68 @@
+.container{
+  background-color: #064789;
+  width: 50%;
+  height: auto;
+  margin: 40px auto;
+  color: white;
+  padding: 80px;
+
+}
+
+.container h4{
+  margin: 15px auto;
+  text-align: center;
+}
+
+mat-form-field{
+  width: 100%;
+}
+.cbutton {
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+
+button{
+  width: 90%;
+  background-color: white;
+}
+
+
+@media (min-width: 720px){
+
+
+  mat-form-field{
+    width: 60%;
+  }
+
+  p{
+
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  mat-form-field{
+  }
+
+  .iconEje{
+    color: black;position: absolute;
+    margin: 10px;
+  }
+
+  button{
+    width: 90%;
+    background-color: white;
+    max-width: 200px;
+  }
+
+  p label{
+    transform: translatey(15px);
+    margin-right: 20px;
+  }
+}
+
+
+
+
+
