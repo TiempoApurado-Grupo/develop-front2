@@ -1,0 +1,31 @@
+.mat-card-subtitle{
+  background-color: #EBF2FA;
+  border: transparent;
+  padding: 20px;
+  border-radius: 30px;
+  align-content: center;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  padding: 20px;
+  align-content: center;
+}
+.content-other{
+  background-color: #EBF2FA;
+  border: transparent;
+  padding: 20px;
+}
+.schedule{
+  border: solid black;
+  padding: 5px;
+  border-radius: 30px;
+  margin-right: auto;
+}
+.location{
+  background-color: #EBF2FA;
+  border: transparent;
+  padding: 20px;
+  border-radius: 30px;
+}
