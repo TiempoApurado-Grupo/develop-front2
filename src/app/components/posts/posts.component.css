@@ -1,0 +1,114 @@
+.ads {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 50px ;
+  background-color: transparent;
+}
+.ad {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  max-width: 850px;
+  border-radius: 5px;
+  padding: 10px;
+  position: relative;
+  background-color: #EBF2FA;
+}
+.ad text{
+  flex-direction: column;
+  justify-content: center;
+  text-align: justify;
+}
+.ad img {
+  float: left;
+  max-width: 100%;
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.ad h3 {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.ad p {
+  margin-top: 20px;
+  font-size: 16px;
+  align-content: center;
+  flex: 1;
+}
+
+.ranking {
+  float: right;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  padding: 20px;
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.ranking start{
+  display: flex;
+  width: 250px;
+
+}
+.iconstar{
+  width: 50px;
+  height: 50px;
+  font-size: 40px;
+  color: gold;
+  transform: translateY(120%);
+}
+.ranking img{
+  width: 250px;
+  height: 250px;
+  margin-right: -250px;
+}
+.send{
+  background-color: #002C3E;
+  color: white;
+  border-radius: 30px;
+}
+.send:hover{
+  background-color: #004669;
+  cursor: pointer;
+}
+.card-actions {
+  justify-content: center;
+  margin-left: 100px;
+}
+.spacer {
+  width: 250px;
+}
+@media (max-width: 770px) {
+  .ad {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  .ad h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .ad p {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+}

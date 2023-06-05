@@ -1,0 +1,51 @@
+.tenant-profile {
+  display: flex;
+  flex-direction: row;
+}
+
+.container-tenant{
+  flex-direction: column;
+  width: 100%;
+}
+
+.photo-container{
+  width: 30%;
+}
+
+.tenant-photo {
+  flex: 1;
+  margin-right: 20px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.tenants-data {
+  flex: 2;
+}
+
+.button-edit {
+  align-items: flex-end;
+}
+
+.transparent-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.custom-button {
+  width: 120px;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .user-profile {
+    flex-direction: column;
+  }
+
+  .user-photo {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}

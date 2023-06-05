@@ -1,0 +1,48 @@
+<div class="form-container">
+  <div class="content">
+    <h2>My tenants</h2>
+    <div class="form-fields">
+      <form [formGroup]="miFormularies">
+        <div class="form-field">
+          <mat-form-field class="element">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" formControlName="name">
+            <mat-error *ngIf="miFormularies.controls['name'].hasError('pattern')">Enter a valid name</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-field">
+          <mat-form-field class="element">
+            <mat-label>CellPhone</mat-label>
+            <input matInput type="text" formControlName="cellPhone">
+            <mat-error *ngIf="miFormularies.controls['cellPhone'].hasError('pattern')">Enter a valid cellPhone</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-field">
+          <mat-form-field class="element">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="email">
+            <mat-error *ngIf="miFormularies.controls['email'].hasError('email')">Enter a valid email</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-field">
+          <mat-form-field class="element">
+            <mat-label>Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="miFormularies.controls['date'].invalid">Enter a valid date</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-field">
+          <mat-form-field class="element">
+            <mat-label>Address</mat-label>
+            <input matInput type="text" formControlName="address">
+            <mat-error *ngIf="miFormularies.controls['address'].hasError('pattern')">Enter a valid address</mat-error>
+          </mat-form-field>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</div>

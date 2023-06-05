@@ -1,0 +1,70 @@
+
+<main>
+  <div class="container">
+    <form [formGroup]="_form" (ngSubmit)="onFormSubmit()">
+      <h4>Completa todos los campos con tus datos</h4>
+      <p >
+        <label>Name:</label>
+        <mat-form-field appearance="fill">
+          <mat-label>Name:</mat-label>
+          <input matInput placeholder="Ex. Juan" formControlName="name" required>
+        </mat-form-field>
+      </p>
+      <p>
+        <label>Last Name:</label>
+        <mat-form-field appearance="fill">
+          <mat-label>Last Name:</mat-label>
+          <input matInput placeholder="Ex. Perez" formControlName="lastName" required>
+        </mat-form-field>
+      </p>
+      <p>
+        <label>Email:</label>
+        <mat-form-field appearance="fill">
+          <mat-label>Email:</mat-label>
+          <input type="email" matInput placeholder="Ex. example@gmail.com" formControlName="email" required>
+        </mat-form-field>
+      </p>
+      <p>
+        <label>Password:</label>
+        <mat-form-field appearance="fill">
+          <mat-label>Password:</mat-label>
+          <input [type]="showPassword ? 'text' : 'password'" matInput formControlName="password" required>
+        </mat-form-field>
+        <mat-icon class="iconEje" (click)="togglePasswordVisibility()">
+          {{ showPassword ? 'visibility_off' : 'visibility' }}
+        </mat-icon>
+
+      </p>
+      <p>
+        <label>Confirm Password:</label>
+        <mat-form-field appearance="fill">
+          <mat-label>Confirm Password:</mat-label>
+          <input type="password" matInput required>
+        </mat-form-field>
+      </p>
+      <p>
+        <label>Type user:</label>
+        <mat-form-field appearance="fill">
+          <mat-label>Select user</mat-label>
+          <mat-select formControlName="userType">
+            <mat-option *ngFor="let val of userType" [value]="val" >
+              {{val}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </p>
+
+      <div class="terminos">
+        <input type="checkbox" name="acceptedTerms" #checkbox (change)="toggleAceptado(checkbox.checked)">
+        <label>Acepto los términos y condiciones</label>
+      </div>
+
+      <div class="cbutton">
+        <button mat-stroked-button type="submit" color="primary" [disabled]="_form.invalid || !acceptedTerms">
+            Register</button>
+      </div>
+
+    </form>
+
+  </div>
+</main>
