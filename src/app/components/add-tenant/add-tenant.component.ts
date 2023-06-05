@@ -22,6 +22,13 @@ export class AddTenantComponent {
     })
   }
 
+  saveForm(){
+    if(this.miFormularies.valid){
+      const formValues = this.miFormularies.value;
 
-
+      console.log(formValues);
+    } else {
+      alert('Please fill in the missing data in the form.');
+    }
+  }
 }

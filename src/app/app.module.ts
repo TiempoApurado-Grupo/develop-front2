@@ -10,23 +10,38 @@ import { SubscriptionComponent } from './components/subscription/subscription.co
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
+import {AddTenantComponent} from "./components/add-tenant/add-tenant.component";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FooterComponent,
-    HeaderComponent,
-    SubscriptionComponent
-  ],
+    declarations: [
+        AppComponent,
+        FooterComponent,
+        HeaderComponent,
+        SubscriptionComponent,
+        AddTenantComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatNativeDateModule,
+    FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+    providers: [],
+    exports: [
+        AddTenantComponent
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
