@@ -1,0 +1,41 @@
+<div>
+  <h2>My Tenants</h2>
+  <div>
+    <mat-card>
+       <mat-card-content>
+         <div class="tenant-profile">
+           <div class="photo-container">
+             <img src="assets/images/photos-tenants/christopher-campbell-rDEOVtE7vOs-unsplash.jpg" alt="photo tenant" class="tenant-photo">
+           </div>
+
+           <div class="tenants-data">
+             <ul>
+               <li><strong>Name:</strong>{{user.name}}</li>
+               <li><strong>Cell Phone:</strong>{{user.cellPhone}}</li>
+               <li><strong>Date:</strong>{{user.date}}</li>
+               <li><strong>Address:</strong>{{user.address}}</li>
+               <li><strong>Email:</strong>{{user.email}}</li>
+             </ul>
+           </div>
+           <div class="button-edit">
+             <button class="transparent-button">
+               <mat-icon>edit_note</mat-icon>
+             </button>
+           </div>
+         </div>
+         <div class="container-icons">
+           <div>
+             <mat-icon>notification_add</mat-icon>
+           </div>
+           <div>
+             <mat-icon>pending_actions</mat-icon>
+           </div>
+           <div>
+             <button mat-raised-button color="primary" class="custom-button">Save</button>
+           </div>
+         </div>
+
+       </mat-card-content>
+    </mat-card>
+  </div>
+</div>
