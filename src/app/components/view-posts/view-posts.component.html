@@ -1,0 +1,26 @@
+<div class="card-container" *ngIf="post">
+  <div>
+    <mat-card-content class="content">
+      <mat-card-title>{{ post.title }}</mat-card-title>
+      <mat-card-subtitle class="mat-card-subtitle">{{ post.description }}</mat-card-subtitle>
+      <mat-card-title>Characteristics</mat-card-title>
+      <div class="content-other">
+        <ul><mat-card-subtitle>Bathrooms: {{ post.characteristics?.bathrooms }}</mat-card-subtitle></ul>
+        <ul><mat-card-subtitle>Bedrooms: {{ post.characteristics?.bedrooms }}</mat-card-subtitle></ul>
+        <ul><mat-card-subtitle>Others: {{ post.characteristics?.others }}</mat-card-subtitle></ul>
+      </div>
+      <mat-card-title>Photo</mat-card-title>
+      <img mat-card-image [src]="post.photo" alt="" class="header-image">
+      <mat-card-title>Price</mat-card-title>
+      <mat-card-subtitle class="mat-card-subtitle">{{ post.price }}</mat-card-subtitle>
+      <mat-card-title>Visit Schedules</mat-card-title>
+      <div class="schedule" *ngFor="let schedule of post.visitSchedules">
+        <mat-card-subtitle>{{ schedule.schedule }}</mat-card-subtitle>
+      </div>
+      <mat-card-title>Location</mat-card-title>
+      <div class="location">
+        <mat-card-subtitle>{{ post.location?.address }}</mat-card-subtitle>
+      </div>
+    </mat-card-content>
+  </div>
+</div>
