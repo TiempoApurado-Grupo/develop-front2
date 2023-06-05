@@ -1,0 +1,32 @@
+<main>
+  <div class="container">
+    <form>
+      <h4>Login</h4>
+      <p>
+        <label>Email:</label>
+        <mat-form-field appearance="fill">
+          <mat-label>Email:</mat-label>
+          <input type="email" matInput placeholder="Ex. example@gmail.com" formControlName="email" required>
+        </mat-form-field>
+      </p>
+      <p>
+        <label>Password:</label>
+        <mat-form-field appearance="fill">
+          <mat-label>Password:</mat-label>
+          <input [type]="showPassword ? 'text' : 'password'" matInput formControlName="password" required>
+        </mat-form-field>
+        <mat-icon class="iconEje" (click)="togglePasswordVisibility()">
+          {{ showPassword ? 'visibility_off' : 'visibility' }}
+        </mat-icon>
+
+      </p>
+      <p>
+      <div class="cbutton">
+        <button mat-stroked-button type="submit" color="primary">
+          Login</button>
+      </div>
+
+    </form>
+
+  </div>
+</main>
