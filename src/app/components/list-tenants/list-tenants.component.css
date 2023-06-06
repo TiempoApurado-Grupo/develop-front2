@@ -1,6 +1,17 @@
+.container-all{
+  height: 80%;
+}
+.container-all h1{
+  font-size: xxx-large;
+  margin-top: 2.5%;
+  margin-left: 2.5%;
+  font-weight: bold;
+
+}
 .tenant-profile {
   display: flex;
   flex-direction: row;
+  margin-bottom: 10px;
 }
 
 .container-tenant{
@@ -68,7 +79,13 @@
 }
 
 .container-icons div {
-  margin-left: 10px;
+  margin-left: 15px;
+}
+
+.container-icons mat-icon{
+  font-size: 40px;
+  height: 40px;
+  width: 40px;
 }
 
 @media screen and (max-width: 600px) {
