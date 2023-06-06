@@ -15,15 +15,17 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
+import {ListTenantsComponent} from "./components/list-tenants/list-tenants.component";
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        FooterComponent,
-        HeaderComponent,
-        SubscriptionComponent,
-        AddTenantComponent
-    ],
+  declarations: [
+    AppComponent,
+    FooterComponent,
+    HeaderComponent,
+    SubscriptionComponent,
+    AddTenantComponent,
+    ListTenantsComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
