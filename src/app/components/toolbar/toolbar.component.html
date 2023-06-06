@@ -20,11 +20,22 @@
 
     </mat-toolbar-row>
 
-    <mat-toolbar-row style="background-color: aliceblue; color:black; gap:40px">
-      <button mat-raised-button style="background-color:#064789; color:white" routerLink="/navigation/list/tenant">My tenants </button>
-      <button mat-raised-button style="background-color:#064789; color:white" routerLink="/navigation/list/property">My properties</button>
-      <button mat-raised-button style="background-color:#064789; color:white">Advertisement</button>
+    <mat-toolbar-row style="background-color: #064789; color:black; gap:40px">
+      <button mat-raised-button style="background-color:#064789; color:white" >Rooms </button>
+      <button mat-raised-button style="background-color:#064789; color:white" >Households</button>
+      <button mat-raised-button style="background-color:#064789; color:white">Business premises</button>
+      <button mat-raised-button style="background-color:#064789; color:white">Departament</button>
+    </mat-toolbar-row>
+
+    <mat-toolbar-row style="background-color: #EBF2FA">
+      <div class="content">
+        <input type="text" placeholder="Search..."/>
+        <button class="search-button" (click)="searchPost()" mat-icon-button>
+          <mat-icon>search</mat-icon>
+        </button>
+      </div>
     </mat-toolbar-row>
 
   </mat-toolbar>
 </header>
+

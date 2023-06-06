@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, NgModule} from '@angular/core';
 import {FormBuilder} from "@angular/forms";
 import {FormGroup} from "@angular/forms";
 import {Validators} from "@angular/forms";
+
 
 @Component({
   selector: 'app-add-tenant',

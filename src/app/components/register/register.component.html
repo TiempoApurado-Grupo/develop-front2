@@ -1,4 +1,4 @@
-
+<app-header></app-header>
 <main>
   <div class="container">
     <form [formGroup]="_form" (ngSubmit)="onFormSubmit()">
@@ -62,9 +62,12 @@
       <div class="cbutton">
         <button mat-stroked-button type="submit" color="primary" [disabled]="_form.invalid || !acceptedTerms">
             Register</button>
+
       </div>
 
     </form>
 
   </div>
 </main>
+
+<app-footer></app-footer>
