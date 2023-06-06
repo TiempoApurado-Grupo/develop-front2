@@ -23,6 +23,7 @@
     {
       "id": 1,
       "profileId": 1,
+      "ranking": 5,
       "posts": [
         {
           "id": 1,
@@ -31,27 +32,14 @@
           "price": 2100,
           "state": "available",
           "category": "Apartment",
-          "ranking": 5,
           "photo": "https://uploads-ssl.webflow.com/5eafe77529a4a6383291dc2e/61d46458351633a952840cd8_rent%20a%20furnished%20flat.jpg",
-          "characteristics": {
-            "bedrooms": 2,
-            "bathrooms": "2 separate bathrooms",
-            "others": "has security"
-          },
-          "visitSchedules": [
-            {
-              "id": 1,
-              "schedule": "Monday 9:00 a.m. - 11:30 a.m."
-            },
-            {
-              "id": 2,
-              "schedule": "Friday 12:30 p.m. - 15:30 p.m."
-            }
-          ],
-          "location": {
-            "district": "Molina",
-            "address": "233 Molina Street"
-          }
+          "district": "Molina",
+          "address": "233 Molina Street",
+          "bedrooms": 2,
+          "bathrooms": "2 separate bathrooms",
+          "others": "has security",
+          "schedule1": "Monday 9:00 a.m. - 11:30 a.m.",
+          "schedule2": "Friday 12:30 p.m. - 15:30 p.m."
         },
         {
           "id": 2,
@@ -60,33 +48,21 @@
           "price": 1500,
           "state": "available",
           "category": "Business premises",
-          "ranking": 4,
           "photo": "https://easycdn.es/4/i/seguros-para-locales-vacios-por-que-deberias-contratarlo-siempre_8328.jpg",
-          "characteristics": {
-            "bedrooms": 1,
-            "bathrooms": "shared bathroom in gallery",
-            "others": "has security"
-          },
-          "visitSchedules": [
-            {
-              "id": 1,
-              "schedule": "Wednesday 14:00 p.m. - 19:30 p.m."
-            },
-            {
-              "id": 2,
-              "schedule": "Saturday 08:30 a.m. - 12:00 p.m."
-            }
-          ],
-          "location": {
-            "district": "Villa",
-            "address": "2421 Villa Street"
-          }
+          "district": "Villa",
+          "address": "2421 Villa Street",
+          "bedrooms": 1,
+          "bathrooms": "shared bathroom in gallery",
+          "others": "has security",
+          "schedule1": "Wednesday 14:00 p.m. - 19:30 p.m.",
+          "schedule2": "Saturday 08:30 a.m. - 12:00 p.m."
         }
       ]
     },
     {
       "id": 2,
       "profileId": 2,
+      "ranking": 3,
       "posts": [
         {
           "id": 1,
@@ -95,33 +71,21 @@
           "price": 8500,
           "state": "available",
           "category": "Households",
-          "ranking": 5,
           "photo": "https://images.rentals.ca/property-pictures/large/lorraine-qc/583721/house-6911686.jpg",
-          "characteristics": {
-            "bedrooms": 4,
-            "bathrooms": "5 bathrooms",
-            "others": "has security"
-          },
-          "visitSchedules": [
-            {
-              "id": 1,
-              "schedule": "Friday 7:00 a.m. - 11:30 a.m."
-            },
-            {
-              "id": 2,
-              "schedule": "Thursday 16:00 p.m. - 20:00 p.m."
-            }
-          ],
-          "location": {
-            "district": "Miraflores",
-            "address": "032 Mirador Street"
-          }
+          "district": "Miraflores",
+          "address": "032 Mirador Street",
+          "bedrooms": 4,
+          "bathrooms": "5 bathrooms",
+          "others": "has security",
+          "schedule1": "Friday 7:00 a.m. - 11:30 a.m.",
+          "schedule2": "Thursday 16:00 p.m. - 20:00 p.m."
         }
       ]
     },
     {
       "id": 3,
       "profileId": 3,
+      "ranking": 4,
       "posts": [
         {
           "id": 1,
@@ -130,30 +94,16 @@
           "price": 550,
           "state": "available",
           "category": "Rooms",
-          "ranking": 4,
           "photo": "https://www.roommates.pe/wp-content/uploads/2023/05/19-450x300.jpg",
-          "characteristics": {
-            "bedrooms": 1,
-            "bathrooms": "shared bathroom with hot water",
-            "others": "has security"
-          },
-          "visitSchedules": [
-            {
-              "id": 1,
-              "schedule": "Thursday 9:00 a.m. - 11:30 a.m."
-            },
-            {
-              "id": 2,
-              "schedule": "Friday 12:00 p.m. - 18:00 p.m."
-            }
-          ],
-          "location": {
-            "district": "Surco",
-            "address": "1290 Surco Street"
-          }
+          "district": "Surco",
+          "address": "1290 Surco Street",
+          "bedrooms": 1,
+          "bathrooms": "shared bathroom with hot water",
+          "others": "has security",
+          "schedule1": "Thursday 9:00 a.m. - 11:30 a.m.",
+          "schedule2": "Friday 12:00 p.m. - 18:00 p.m."
         }
       ]
     }
   ]
 }
-
