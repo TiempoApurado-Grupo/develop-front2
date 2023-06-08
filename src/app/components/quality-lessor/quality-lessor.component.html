@@ -1,0 +1,21 @@
+<app-header-lessor></app-header-lessor>
+<section *ngFor="let less of lessors">
+  <div class="profile">
+    <img src="{{less.imgURL}}" alt="">
+    <div class="content">
+      <h4>{{less.name}}</h4>
+      <p>{{less.description}}</p>
+      <div class="in-star">
+        <input type="range" min="1" max="5" step="1" [(ngModel)]="less.rank">
+        <div class="stars">
+          <mat-icon *ngFor="let star of getStarRange(less.rank); let i = index" (click)="rateProfile(i,less.rank)">{{ star }}</mat-icon>
+        </div>
+        <button>save</button>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<app-footer></app-footer>
+
