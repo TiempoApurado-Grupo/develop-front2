@@ -24,7 +24,6 @@ const routes: Routes = [
   {path: 'lessors', component: PostsComponent},
   {path: 'lessors/:lessorId/posts/:postId', component: ViewPostsComponent},
 
-
 ];
 
 @NgModule({
