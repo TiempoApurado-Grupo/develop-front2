@@ -39,8 +39,7 @@ import {AddTenantComponent} from "./components/add-tenant/add-tenant.component";
 import {ViewPostsComponent} from "./components/view-posts/view-posts.component";
 import {PostsComponent} from "./components/posts/posts.component";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
-import { QualifyLessorComponent } from './components/qualify-lessor/qualify-lessor.component';
-
+import {QualityLessorComponent} from "./components/quality-lessor/quality-lessor.component";
 
 @NgModule({
   declarations: [
@@ -61,7 +60,7 @@ import { QualifyLessorComponent } from './components/qualify-lessor/qualify-less
     AddTenantComponent,
     ViewPostsComponent,
     PostsComponent,
-    QualifyLessorComponent
+    QualityLessorComponent
 
   ],
   imports: [

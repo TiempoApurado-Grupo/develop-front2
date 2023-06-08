@@ -4,11 +4,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-.profile{
+.profile {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content:space-around;
+  justify-content: space-around;
   margin: 0px auto 100px;
 }
 
@@ -26,7 +26,8 @@ img{
   margin-right: 10px;
 }
 .content h4{
-  background-color: #CAE3FF;
+  background-color: #EBF2FA;
+  border: 2px solid #CAE3FF;
   border-radius: 10px;
   padding: 4px 20px;
   width: 80%;
@@ -35,7 +36,9 @@ img{
   font-weight: bold;
 }
 .content p{
-  background-color: #CAE3FF;
+  background-color: #EBF2FA;
+  border: 2px solid #CAE3FF;
+  border-radius: 10px;
   padding: 10px;
   color: black;
   font-weight: 500;
