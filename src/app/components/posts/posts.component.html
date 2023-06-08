@@ -1,6 +1,7 @@
 <app-header-lessor></app-header-lessor>
+
 <ng-container *ngFor="let lessor of lessors">
-  <mat-card *ngFor="let post of lessor.posts" class="ads" style="max-width: 1200px">
+  <mat-card *ngFor="let post of lessor.posts" class="ads" style="max-width: 1000px">
     <mat-card-content>
       <div class="ad">
         <img src="{{ post.photo }}" alt="{{ post.description }}">
@@ -12,13 +13,15 @@
       <div class="ranking">
         <div class="start">
           <ng-container *ngFor="let profile of profiles">
-            <div *ngIf="profile.id === lessor.profileId">
+            <div class="imgs" *ngIf="profile.id === lessor.profileId">
               <img src="{{ profile.image }}" alt="{{ post.description }}">
             </div>
           </ng-container>
-          <mat-icon class="iconstar" *ngFor="let i of [1, 2, 3, 4, 5]">
-            {{ i <= lessor.ranking ? 'star' : 'star_border' }}
-          </mat-icon>
+          <div>
+            <mat-icon class="iconstar" *ngFor="let i of [1, 2, 3, 4, 5]">
+              {{ i <= lessor.ranking ? 'star' : 'star_border' }}
+            </mat-icon>
+          </div>
         </div>
       </div>
     </mat-card-content>
@@ -26,8 +29,9 @@
       <button class="open-new" mat-icon-button [routerLink]="['/lessors',lessor.id,'posts', post.id]">
         <mat-icon>open_in_new</mat-icon>
       </button>
-      <div class="spacer"></div>
       <button class="send">Send message</button>
     </mat-card-actions>
   </mat-card>
 </ng-container>
+
+<app-footer></app-footer>

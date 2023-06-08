@@ -1,30 +1,35 @@
 <app-toolbar></app-toolbar>
 <div class="card-container" *ngIf="post">
-  <div>
-    <mat-card-content class="content">
-      <mat-card-title>{{ post.title }}</mat-card-title>
-      <mat-card-subtitle class="mat-card-subtitle">{{ post.description }}</mat-card-subtitle>
-      <mat-card-title>Characteristics</mat-card-title>
-      <div class="content-other">
-        <ul><mat-card-subtitle>Bathrooms: {{ post.bathrooms }}</mat-card-subtitle></ul>
-        <ul><mat-card-subtitle>Bedrooms: {{ post.bedrooms }}</mat-card-subtitle></ul>
-        <ul><mat-card-subtitle>Others: {{ post.others }}</mat-card-subtitle></ul>
+    <mat-card-content>
+      <img mat-card-image [src]="post.photo" alt="">
+      <div class="descrip">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.description }}</p>
+        <h3>Characteristics</h3>
       </div>
-      <mat-card-title>Photo</mat-card-title>
-      <img mat-card-image [src]="post.photo" alt="" class="header-image">
-      <mat-card-title>Price</mat-card-title>
-      <mat-card-subtitle class="mat-card-subtitle">{{ post.price }}</mat-card-subtitle>
-      <mat-card-title>Visit Schedules</mat-card-title>
-      <mat-card-subtitle class="schedule">{{ post.schedule1 }}</mat-card-subtitle>
-      <mat-card-subtitle class="schedule">{{ post.schedule2 }}</mat-card-subtitle>
-      <mat-card-title>Location</mat-card-title>
-      <div class="location">
-        <mat-card-subtitle>{{ post.address }}</mat-card-subtitle>
+      <div class="characts">
+        <ol>Bathrooms: {{ post.bathrooms }}</ol>
+        <ol>Bedrooms: {{ post.bedrooms }}</ol>
+        <ol>Others: {{ post.others }}</ol>
       </div>
-      <mat-card-subtitle >Available: {{ post.state }}</mat-card-subtitle>
+      <div class="resumen">
+        <h5>Price:</h5>
+        <p class="mat-card-subtitle">{{ post.price }}</p>
+      </div>
+      <div class="resumen">
+        <h5>Visit Schedules</h5>
+        <p class="schedule">{{ post.schedule1 }}</p>
+        <p class="schedule">{{ post.schedule2 }}</p>
+      </div>
+      <div class="resumen">
+      <h5>Location</h5>
+          <p>{{ post.address }}</p>
+          <p>Available: {{ post.state }}</p>
+      </div>
+      <p class="space"></p>
     </mat-card-content>
-  </div>
 </div>
 
-
 <app-footer></app-footer>
+
+

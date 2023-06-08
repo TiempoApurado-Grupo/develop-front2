@@ -6,36 +6,26 @@
           <img src="../assets/images/logo2.jpg" alt="">
         </a>
       </div>
-      <mat-toolbar-row style="gap: 30px; padding-left: 65%">
-        <button mat-fab style="background-color: aliceblue; color: black" aria-label="Example icon button with a home icon" routerLink="/navigation/list/property">
+      <mat-toolbar-row class="icons">
+        <button mat-fab style="background-color: aliceblue; color: black" routerLink="/navigation/list/property">
           <mat-icon>home</mat-icon>
         </button>
-        <button mat-fab style="background-color: aliceblue; color: black" aria-label="Example icon button with a home icon">
+        <button mat-fab style="background-color: aliceblue; color: black">
           <mat-icon>notifications</mat-icon>
         </button>
-        <button mat-fab style="background-color: aliceblue; color: black" aria-label="Example icon button with a home icon" routerLink="/navigation/edit/profile">
+        <button mat-fab style="background-color: aliceblue; color: black" routerLink="/navigation/edit/profile">
           <mat-icon>person</mat-icon>
         </button>
       </mat-toolbar-row>
 
     </mat-toolbar-row>
 
-    <mat-toolbar-row style="background-color: #064789; color:black; gap:40px">
-      <button mat-raised-button style="background-color:#064789; color:white" >Rooms </button>
-      <button mat-raised-button style="background-color:#064789; color:white" >Households</button>
-      <button mat-raised-button style="background-color:#064789; color:white">Business premises</button>
-      <button mat-raised-button style="background-color:#064789; color:white">Departament</button>
+    <mat-toolbar-row class="categories">
+      <button mat-raised-button>Rooms </button>
+      <button mat-raised-button>Households</button>
+      <button mat-raised-button>Business premises</button>
+      <button mat-raised-button>Departament</button>
     </mat-toolbar-row>
-
-    <mat-toolbar-row style="background-color: #EBF2FA">
-      <div class="content">
-        <input type="text" placeholder="Search..."/>
-        <button class="search-button" (click)="searchPost()" mat-icon-button>
-          <mat-icon>search</mat-icon>
-        </button>
-      </div>
-    </mat-toolbar-row>
-
   </mat-toolbar>
 </header>
 
