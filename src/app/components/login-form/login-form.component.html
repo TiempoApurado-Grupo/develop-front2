@@ -3,19 +3,14 @@
   <div class="container">
     <form>
       <h4>Login</h4>
-      <p>
+      <p class="inputbox">
         <label>Email:</label>
-        <mat-form-field appearance="fill">
-          <mat-label>Email:</mat-label>
-          <input type="email" matInput placeholder="Ex. example@gmail.com" formControlName="email" required>
-        </mat-form-field>
+        <input class="email" type="email" placeholder="Ex. example@gmail.com" formControlName="email" required>
       </p>
-      <p>
+      <p class="inputbox">
         <label>Password:</label>
-        <mat-form-field appearance="fill">
-          <mat-label>Password:</mat-label>
-          <input [type]="showPassword ? 'text' : 'password'" matInput formControlName="password" required>
-        </mat-form-field>
+        <input class="pwd" [type]="showPassword ? 'text' : 'password'" matInput formControlName="password" required>
+
         <mat-icon class="iconEje" (click)="togglePasswordVisibility()">
           {{ showPassword ? 'visibility_off' : 'visibility' }}
         </mat-icon>
@@ -27,7 +22,6 @@
       </div>
 
       <p id="signUp">You do not have an account? <strong><a routerLink="navigation/register" href="">Sign Up</a></strong></p>
-
 
     </form>
 

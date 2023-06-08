@@ -1,64 +1,87 @@
 .container{
   background-color: #064789;
-  width: 50%;
+  width: 98%;
+  max-width: 500px;
   height: auto;
   margin: 40px auto;
   color: white;
-  padding: 80px;
-
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .container h4{
+  font-size: 1.7rem;
+  font-weight: 500;
   margin: 15px auto;
   text-align: center;
 }
 
-mat-form-field{
-  width: 100%;
+.inputbox{
+  display: flex;
+  flex-direction: column;
+}
+.inputbox label{
+  font-size: 1.2rem;
+  margin: 10px 10px 10px 0;
+  text-align: start;
+}
+.inputbox input{
+  font-size: 1.2rem;
+  margin-left: 10px;
+  padding: 5px 8px;
+  background: white;
+  backdrop-filter: blur(10px);
+  border: none;
+  color: black;
+}
+.iconEje{
+  margin-left: 10px;
 }
 .cbutton {
   display: grid;
   place-items: center;
   width: 100%;
+  max-width: 350px;
+  margin: auto;
 }
 
 button{
-  width: 90%;
+  width: 80%;
   background-color: white;
+  font-size: 1.1rem;
 }
 
+#signUp{
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+#signUp a{
+  color: black;
+  text-decoration: none;
+}
+#signUp a:hover{
+  text-decoration: underline;
+}
 
 @media (min-width: 720px){
-
-
-  mat-form-field{
-    width: 60%;
+  .inputbox label{
+    text-align: end;
   }
-
-  p{
-
-    width: 80%;
-    display: flex;
-    justify-content: flex-end;
+  .inputbox{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:0.5rem;
   }
-
-  mat-form-field{
-  }
-
   .iconEje{
-    color: black;position: absolute;
-    margin: 10px;
+    grid-column-end: 3;
+    margin-left: auto;
   }
-
   button{
-    width: 90%;
-    background-color: white;
-    max-width: 200px;
+    font-size: 1.3rem;
   }
-
-  p label{
-    transform: translatey(15px);
-    margin-right: 20px;
+  #signUp{
+    font-size: 1.1rem;
   }
 }
 
