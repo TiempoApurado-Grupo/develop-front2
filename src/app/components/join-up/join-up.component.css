@@ -1,30 +1,38 @@
 .welcomeContainer {
-  /*border: 5px solid lightseagreen;*/
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 7% 0;
-}
-
-.welcomeImgCard {
-  border-radius: 5%;
-}
-.pading-h{
-  padding-left: 5rem;
-  padding-right: 5rem;
-}
-
-.colum{
-  display:flex;
+  background-color: #f5eded;
   flex-direction: column;
-}
-.row{
-  display:flex;
-  flex-direction: row;
-}
-.w-full{
   width: 100%;
+  margin: 25px 0;
 }
-.center-item{
-  justify-content: center;
+h4{
+  font-size: 1.3rem;
+  margin: 15px auto;
+  font-weight: bold;
+}
+.usertypes{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+.welcomeImgCard {
+  width: 200px;
+  border-radius: 5%;
+  margin: 0 auto 20px;
+}
+
+@media (min-width: 720px){
+
+  h4{
+    font-size: 1.7rem;
+  }
+  .usertypes{
+    margin-top: 30px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-width: 1000px;
+  }
 }
