@@ -23,7 +23,7 @@ const routes: Routes = [
   {path:'navigation/add/tenant', component:AddTenantComponent},
   {path: 'lessors', component: PostsComponent},
   {path: 'lessors/:lessorId/posts/:postId', component: ViewPostsComponent},
-
+  
 ];
 
 @NgModule({
