@@ -1,21 +1,20 @@
 <app-header-lessor></app-header-lessor>
 <div>
   <h2>My Tenants</h2>
-  <div>
+  <div *ngFor="let tenant of tenants">
     <mat-card>
        <mat-card-content>
          <div class="tenant-profile">
            <div class="photo-container">
-             <img src="assets/images/photos-tenants/christopher-campbell-rDEOVtE7vOs-unsplash.jpg" alt="photo tenant" class="tenant-photo">
+             <img src="{{tenant.image}}" alt="{{tenant.image.alt}}" class="tenant-photo">
            </div>
-
            <div class="tenants-data">
              <ul>
-               <li><strong>Name:</strong>{{user.name}}</li>
-               <li><strong>Cell Phone:</strong>{{user.cellPhone}}</li>
-               <li><strong>Date:</strong>{{user.date}}</li>
-               <li><strong>Address:</strong>{{user.address}}</li>
-               <li><strong>Email:</strong>{{user.email}}</li>
+               <li><strong>Name:</strong>{{tenant.name}}</li>
+               <li><strong>Cell Phone:</strong>{{tenant.cellPhone}}</li>
+               <li><strong>Date:</strong>{{tenant.date}}</li>
+               <li><strong>Address:</strong>{{tenant.address}}</li>
+               <li><strong>Email:</strong>{{tenant.email}}</li>
              </ul>
            </div>
            <div class="button-edit">

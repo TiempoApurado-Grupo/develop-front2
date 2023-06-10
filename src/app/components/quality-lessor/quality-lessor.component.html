@@ -1,21 +1,24 @@
 <app-header-lessor></app-header-lessor>
-<section *ngFor="let less of lessors">
+
+<div *ngFor="let comment of comments">
   <div class="profile">
-    <img src="{{less.imgURL}}" alt="">
+    <img src="{{ getTenantById(comment.tenantId)?.image }}" alt="">
     <div class="content">
-      <h4>{{less.name}}</h4>
-      <p>{{less.description}}</p>
+      <h4>{{ getTenantById(comment.tenantId)?.name }}</h4>
+      <p>{{ comment.message }}</p>
       <div class="in-star">
-        <input type="range" min="1" max="5" step="1" [(ngModel)]="less.rank">
+        <input type="range" min="1" max="5" step="1" [(ngModel)]="comment.stars">
         <div class="stars">
-          <mat-icon *ngFor="let star of getStarRange(less.rank); let i = index" (click)="rateProfile(i,less.rank)">{{ star }}</mat-icon>
+          <mat-icon *ngFor="let star of getStarRange(comment.stars); let i = index" (click)="rateProfile(i, comment.stars)">{{ star }}</mat-icon>
         </div>
         <button>save</button>
       </div>
     </div>
   </div>
+</div>
 
-</section>
+
+
 
 <app-footer></app-footer>
 

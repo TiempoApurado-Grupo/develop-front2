@@ -1,109 +1,264 @@
 {
-  "profiles":[
+  "tenants": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "lastname": "Doe",
+      "email": "johndoe@gmail.com",
+      "password": "123456789",
+      "image": "https://cdn-icons-png.flaticon.com/512/146/146035.png",
+      "cellPhone": "932918041",
+      "address": "Carabayllo Lima",
+      "date": "29/05/2023"
+    },
+    {
+      "id": 2,
+      "name": "Nelly",
+      "lastname": "Camacho",
+      "email": "nellycamacho@gmail.com",
+      "password": "123456789",
+      "image": "https://images.pexels.com/photos/4862429/pexels-photo-4862429.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "cellPhone": "932918041",
+      "address": "Ate",
+      "date": "29/05/2023"
+    },
+    {
+      "id": 3,
+      "name": "Leonel",
+      "lastname": "messi",
+      "email": "messi10@gmail.com",
+      "password": "123456789",
+      "image": "https://library.sportingnews.com/2022-12/Lionel%20Messi%20-%20World%20Cup%20Final%202022%20penalty%20celebration%20vs%20France%20-%20181222-16x9.jpg",
+      "cellPhone": "932918041",
+      "address": "Santa Anita",
+      "date": "29/05/2023"
+    },
+    {
+      "id": 4,
+      "name": "Cristian",
+      "lastname": "Cueva",
+      "email": "cuevita@gmail.com",
+      "password": "123456789",
+      "image": "https://cloudfront-us-east-1.images.arcpublishing.com/infobae/ZJCPGFV6RRHXTOHHJ5AZHCSVNM.jpg",
+      "cellPhone": "932918041",
+      "address": "Santa Anita",
+      "date": "29/05/2023"
+    },
+    {
+      "id": 5,
+      "name": "GianLuca",
+      "lastname": "Lapadula",
+      "email": "lapadula13@gmail.com",
+      "password": "123456789",
+      "image": "https://e.rpp-noticias.io/xlarge/2023/06/02/500450_1435932.jpg",
+      "cellPhone": "932918041",
+      "address": "Santa Anita",
+      "date": "29/05/2023"
+    }
+  ],
+  "lessors": [
     {
       "id": 1,
       "name": "Maria Rosa",
       "lastname": "Paredes Cusi",
+      "email": "maritosa@gmail.com",
+      "password": "123456789",
+      "ranking": 5,
       "image": "https://static.vecteezy.com/system/resources/previews/017/293/500/original/professional-business-women-employment-avatar-long-hair-character-png.png"
     },
     {
       "id": 2,
       "name": "Jose Carlos",
       "lastname": "Quispe Rodriguez",
-      "image":"https://cdn-icons-png.flaticon.com/512/4128/4128176.png"
+      "email": "josecarlos@gmail.com",
+      "password": "123456789",
+      "ranking": 3,
+      "image": "https://cdn-icons-png.flaticon.com/512/4128/4128176.png"
     },
     {
       "id": 3,
       "name": "Luis Angel",
       "lastname": "Quispe Martinez",
-      "image":"https://cdn-icons-png.flaticon.com/512/146/146035.png"
+      "email": "angel21@gmail.com",
+      "password": "123456789",
+      "ranking": 4,
+      "image": "https://cdn-icons-png.flaticon.com/512/146/146035.png"
     }
   ],
-  "lessors": [
+  "comments": [
     {
       "id": 1,
-      "profileId": 1,
-      "ranking": 5,
-      "posts": [
+      "tenantId": 1,
+      "lessorId": 1,
+      "message": "excellent service",
+      "stars": 5
+    },
+    {
+      "id": 1,
+      "tenantId": 2,
+      "lessorId": 1,
+      "message": "excellent service",
+      "stars": 3
+    },
+    {
+      "id": 2,
+      "tenantId": 3,
+      "lessorId": 2,
+      "message": "excellent service",
+      "stars": 4
+    },
+    {
+      "id": 3,
+      "tenantId": 4,
+      "lessorId": 3,
+      "message": "excellent service",
+      "stars": 1
+    },
+    {
+      "id": 4,
+      "tenantId": 5,
+      "lessorId": 3,
+      "message": "excellent service",
+      "stars": 5
+    }
+  ],
+  "PropertiesByCategory": [
+    {
+      "id": 1,
+      "category": "Apartment",
+      "properties": [
         {
-          "id": 1,
-          "title": "Beautiful Furnished or Unfurnished Apartment at 233 Molina street",
-          "description": "Nice apartment fully furnished and equipped, super located, two bedrooms, study, two bathrooms, dining room, kitchen, laundry room, garage. We have this and more apartments for rent furnished without furnishing with appliances. Contact us and find the ideal apartment for YOU!!!",
-          "price": 2100,
-          "state": "available",
-          "category": "Apartment",
-          "photo": "https://uploads-ssl.webflow.com/5eafe77529a4a6383291dc2e/61d46458351633a952840cd8_rent%20a%20furnished%20flat.jpg",
-          "district": "Molina",
-          "address": "233 Molina Street",
-          "bedrooms": 2,
-          "bathrooms": "2 separate bathrooms",
-          "others": "has security",
-          "schedule1": "Monday 9:00 a.m. - 11:30 a.m.",
-          "schedule2": "Friday 12:30 p.m. - 15:30 p.m."
-        },
-        {
-          "id": 2,
-          "title": "Local Rental For Nails, Sales, Warehouse, Store with operating license",
-          "description": "Commercial premises 26m2, 1 studio apartment door to hallway 1st floor of 13m2 spiral staircase to 2nd floor, 1 13m2 2nd floor storage. It is located on the first floor, a 3-story premises, you have 6 commercial premises and it has an independent entrance.",
-          "price": 1500,
-          "state": "available",
-          "category": "Business premises",
-          "photo": "https://easycdn.es/4/i/seguros-para-locales-vacios-por-que-deberias-contratarlo-siempre_8328.jpg",
-          "district": "Villa",
-          "address": "2421 Villa Street",
-          "bedrooms": 1,
-          "bathrooms": "shared bathroom in gallery",
-          "others": "has security",
-          "schedule1": "Wednesday 14:00 p.m. - 19:30 p.m.",
-          "schedule2": "Saturday 08:30 a.m. - 12:00 p.m."
+          "propertyId": 1
         }
       ]
     },
     {
       "id": 2,
-      "profileId": 2,
-      "ranking": 3,
-      "posts": [
+      "category": "Business premises",
+      "properties": [
         {
-          "id": 1,
-          "title": "Nice House for Rent in Miraflores",
-          "description": "Beautiful house with a nice view, it has an entrance hall, guest bathroom, bright room, dining room, kitchen, desk, living room, laundry room, nice terrace, garden, wooden floors, 2 garages.",
-          "price": 8500,
-          "state": "available",
-          "category": "Households",
-          "photo": "https://images.rentals.ca/property-pictures/large/lorraine-qc/583721/house-6911686.jpg",
-          "district": "Miraflores",
-          "address": "032 Mirador Street",
-          "bedrooms": 4,
-          "bathrooms": "5 bathrooms",
-          "others": "has security",
-          "schedule1": "Friday 7:00 a.m. - 11:30 a.m.",
-          "schedule2": "Thursday 16:00 p.m. - 20:00 p.m."
+          "propertyId": 2
         }
       ]
     },
     {
       "id": 3,
-      "profileId": 3,
-      "ranking": 4,
-      "posts": [
+      "category": "Households",
+      "properties": [
         {
-          "id": 1,
-          "title": "Furnished Room for Women, Steps From the Sagitario Police Station",
-          "description": "9m2 room in a quiet and safe apartment on the fourth floor (no elevator), with a 1 1/2 square bed, large closet. It includes a laundry area with a clothesline and a common terrace with a half bathroom. The family home is located near a park where you will find a variety of restaurants and businesses.",
-          "price": 550,
-          "state": "available",
-          "category": "Rooms",
-          "photo": "https://www.roommates.pe/wp-content/uploads/2023/05/19-450x300.jpg",
-          "district": "Surco",
-          "address": "1290 Surco Street",
-          "bedrooms": 1,
-          "bathrooms": "shared bathroom with hot water",
-          "others": "has security",
-          "schedule1": "Thursday 9:00 a.m. - 11:30 a.m.",
-          "schedule2": "Friday 12:00 p.m. - 18:00 p.m."
+          "propertyId": 3
         }
       ]
+    },
+    {
+      "id": 4,
+      "category": "Rooms",
+      "properties": [
+        {
+          "propertyId": 4
+        }
+      ]
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "lessorId": 1,
+      "propertyId": 1,
+      "propertyCategoryId": 1,
+      "description": "Nice apartment fully furnished and equipped, super located, two bedrooms, study, two bathrooms, dining room, kitchen, laundry room, garage. We have this and more apartments for rent furnished without furnishing with appliances. Contact us and find the ideal apartment for YOU!!!"
+    },
+    {
+      "id": 2,
+      "lessorId": 1,
+      "propertyId": 2,
+      "propertyCategoryId": 2,
+      "description": "Commercial premises 26m2, 1 studio apartment door to hallway 1st floor of 13m2 spiral staircase to 2nd floor, 1 13m2 2nd floor storage. It is located on the first floor, a 3-story premises, you have 6 commercial premises and it has an independent entrance."
+    },
+    {
+      "id": 3,
+      "lessorId": 3,
+      "propertyId": 3,
+      "propertyCategoryId": 3,
+      "description": "Beautiful house with a nice view, it has an entrance hall, guest bathroom, bright room, dining room, kitchen, desk, living room, laundry room, nice terrace, garden, wooden floors, 2 garages."
+    },
+    {
+      "id": 4,
+      "lessorId": 4,
+      "propertyId": 4,
+      "propertyCategoryId": 4,
+      "description": "Commercial premises 26m2, 1 studio apartment door to hallway 1st floor of 13m2 spiral staircase to 2nd floor, 1 13m2 2nd floor storage. It is located on the first floor, a 3-story premises, you have 6 commercial premises and it has an independent entrance."
+    }
+  ],
+  "properties": [
+    {
+      "id": 1,
+      "lessorId": 1,
+      "title": "Beautiful Furnished or Unfurnished Apartment at 233 Molina street",
+      "cellPhone": "932918041",
+      "category": "Apartment",
+      "description": "Nice apartment fully furnished and equipped, super located, two bedrooms, study, two bathrooms, dining room, kitchen, laundry room, garage. We have this and more apartments for rent furnished without furnishing with appliances. Contact us and find the ideal apartment for YOU!!!",
+      "price": 2100,
+      "state": "available",
+      "photo": "https://uploads-ssl.webflow.com/5eafe77529a4a6383291dc2e/61d46458351633a952840cd8_rent%20a%20furnished%20flat.jpg",
+      "district": "Molina",
+      "address": "233 Molina Street",
+      "bedrooms": 2,
+      "bathrooms": "2 separate bathrooms",
+      "others": "has security",
+      "schedule1": "Monday 9:00 a.m. - 11:30 a.m.",
+      "schedule2": "Friday 12:30 p.m. - 15:30 p.m."
+    },
+    {
+      "id": 2,
+      "lessorId": 1,
+      "title": "Local Rental For Nails, Sales, Warehouse, Store with operating license",
+      "cellPhone": "932918041",
+      "category": "Business premises",
+      "price": 1500,
+      "state": "available",
+      "photo": "https://easycdn.es/4/i/seguros-para-locales-vacios-por-que-deberias-contratarlo-siempre_8328.jpg",
+      "district": "Villa",
+      "address": "2421 Villa Street",
+      "bedrooms": 1,
+      "bathrooms": "shared bathroom in gallery",
+      "others": "has security",
+      "schedule1": "Wednesday 14:00 p.m. - 19:30 p.m.",
+      "schedule2": "Saturday 08:30 a.m. - 12:00 p.m."
+    },
+    {
+      "id": 3,
+      "lessorId": 2,
+      "title": "Nice House for Rent in Miraflores",
+      "cellPhone": "932918041",
+      "category": "Households",
+      "price": 8500,
+      "state": "available",
+      "photo": "https://images.rentals.ca/property-pictures/large/lorraine-qc/583721/house-6911686.jpg",
+      "district": "Miraflores",
+      "address": "032 Mirador Street",
+      "bedrooms": 4,
+      "bathrooms": "5 bathrooms",
+      "others": "has security",
+      "schedule1": "Friday 7:00 a.m. - 11:30 a.m.",
+      "schedule2": "Thursday 16:00 p.m. - 20:00 p.m."
+    },
+    {
+      "id": 4,
+      "lessorId": 3,
+      "title": "Furnished Room for Women, Steps From the Sagitario Police Station",
+      "cellPhone": "932918041",
+      "category": "Rooms",
+      "price": 550,
+      "state": "available",
+      "photo": "https://www.roommates.pe/wp-content/uploads/2023/05/19-450x300.jpg",
+      "district": "Surco",
+      "address": "1290 Surco Street",
+      "bedrooms": 1,
+      "bathrooms": "shared bathroom with hot water",
+      "others": "has security",
+      "schedule1": "Thursday 9:00 a.m. - 11:30 a.m.",
+      "schedule2": "Friday 12:00 p.m. - 18:00 p.m."
     }
   ]
 }

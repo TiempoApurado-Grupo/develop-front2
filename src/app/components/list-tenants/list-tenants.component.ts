@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {AddTenantComponent} from "../add-tenant/add-tenant.component";
+import {Tenant} from "../../model/tenant";
+import {PostsService} from "../../services/posts.service";
 
 @Component({
   selector: 'app-list-tenants',
@@ -8,11 +9,16 @@ import {AddTenantComponent} from "../add-tenant/add-tenant.component";
 })
 
 export class ListTenantsComponent {
-  user={
-    name: 'Emilia Sanchez',
-    email: 'emilia@upc.edu.pe',
-    cellPhone: '932918041',
-    address:'Carabayllo, Lima',
-    date: '29/05/2023'
-  };
+  tenants:Tenant[]=[];
+  constructor(private postService: PostsService, ) {
+  }
+
+  ngOnInit() {
+    this.getAllPosts();
+  }
+  getAllPosts(){
+    this.postService.getAllTenants().subscribe(tenants=>{
+      this.tenants=tenants;
+    });
+  }
 }

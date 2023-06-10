@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Lessor} from "../../model/lessor";
 import {PostsService} from "../../services/posts.service";
-import {Profile} from "../../model/profile";
+import {Lessor} from "../../model/lessor";
+import {Post} from "../../model/post";
+import {Property} from "../../model/property";
 
 @Component({
   selector: 'app-posts',
@@ -10,7 +11,8 @@ import {Profile} from "../../model/profile";
 })
 export class PostsComponent implements OnInit{
   lessors: Lessor[]=[];
-  profiles:Profile[]=[];
+  posts:Post[]=[];
+  properties:Property[]=[];
   constructor(private postService: PostsService, ) {
   }
 
@@ -21,8 +23,24 @@ export class PostsComponent implements OnInit{
     this.postService.getAllLessors().subscribe(lessors=>{
       this.lessors=lessors;
     });
-    this.postService.getAllProfiles().subscribe(profiles=>{
-      this.profiles=profiles;
+    this.getPosts();
+    this.postService.getAllProperties().subscribe(properties=>{
+      this.properties=properties;
     });
   }
+  getPosts(): void {
+    this.postService.getAllPosts().subscribe(posts=>{
+      this.posts=posts;
+    });
+  }
+  onSearch(filterItem: string): void {
+    if (filterItem) {
+      this.postService.searchPosts(filterItem).subscribe(posts => {
+        this.posts = posts;
+      });
+    } else {
+      this.getPosts();
+    }
+  }
+
 }

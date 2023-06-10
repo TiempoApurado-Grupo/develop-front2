@@ -3,20 +3,18 @@ import {PostsService} from "../../services/posts.service";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
-  selector: 'app-toolbar',
-  templateUrl: './toolbar.component.html',
-  styleUrls: ['./toolbar.component.css']
+  selector: 'app-header-tenant',
+  templateUrl: './header-tenant.component.html',
+  styleUrls: ['./header-tenant.component.css']
 })
-export class ToolbarComponent {
+export class HeaderTenantComponent {
   @Output() searchQuery = new EventEmitter<string>();
   @Output() clearSearch = new EventEmitter<void>();
   filterItem:string=' ';
   constructor(private postService: PostsService, private route:ActivatedRoute ) {  }
 
-  ngOnInit() {
-
-  }
   onSearch(){
     this.searchQuery.emit(this.filterItem);
   }
+
 }

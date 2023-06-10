@@ -1,10 +1,11 @@
-export interface Lessor {
+export interface Tenant {
   id: any;
   name: any;
   lastname: any;
   email: any;
   password: any;
-  ranking: any;
   image: any;
+  cellPhone: any;
+  address: any;
+  date: any;
 }
-

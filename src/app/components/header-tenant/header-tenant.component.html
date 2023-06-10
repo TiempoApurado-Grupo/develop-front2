@@ -1,0 +1,13 @@
+<div class="search-bar" >
+  <mat-toolbar>
+    <mat-toolbar-row class="mat-toolbar-row">
+      <div class="content">
+        <mat-form-field class="mat-form-field" appearance="outline" >
+          <input matInput [(ngModel)]="filterItem" placeholder="Search" (ngModelChange)="onSearch()" />
+          <mat-icon matPrefix>search</mat-icon>
+        </mat-form-field>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+

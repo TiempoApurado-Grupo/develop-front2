@@ -10,19 +10,23 @@ import {AddTenantComponent} from "./components/add-tenant/add-tenant.component";
 import {ListTenantsComponent} from "./components/list-tenants/list-tenants.component";
 import {ViewPostsComponent} from "./components/view-posts/view-posts.component";
 import {PostsComponent} from "./components/posts/posts.component";
+import {QualityLessorComponent} from "./components/quality-lessor/quality-lessor.component";
+import {PropertyFormComponent} from "./components/property-form/property-form.component";
 
 const routes: Routes = [
   {path:'',redirectTo:'/home',pathMatch:'full'},
   {path:'home',component:JoinUpComponent},
   {path:'navigation/login', component:LoginFormComponent},
   {path:'navigation/register', component:RegisterComponent},
-  {path:'navigation/list/property', component:PropertyListComponent},
+  {path:'navigation/list/properties', component:PropertyListComponent},
   {path:'navigation/edit/profile', component:EditProfileComponent},
   {path:'navigation/add/tenant', component:AddTenantComponent},
   {path:'navigation/list/tenant', component:ListTenantsComponent},
   {path:'navigation/add/tenant', component:AddTenantComponent},
-  {path: 'lessors', component: PostsComponent},
-  {path: 'lessors/:lessorId/posts/:postId', component: ViewPostsComponent},
+  {path: 'posts', component: PostsComponent},
+  {path: 'posts/:id', component: ViewPostsComponent},
+  {path:'navigation/comments', component:QualityLessorComponent},
+  {path:'navigation/add/property', component:PropertyFormComponent},
 
 ];
 

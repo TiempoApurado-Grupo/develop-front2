@@ -1,33 +1,36 @@
 <app-toolbar></app-toolbar>
-<div class="card-container" *ngIf="post">
-    <mat-card-content>
-      <img mat-card-image [src]="post.photo" alt="">
-      <div class="descrip">
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.description }}</p>
-        <h3>Characteristics</h3>
-      </div>
-      <div class="characts">
-        <ol>Bathrooms: {{ post.bathrooms }}</ol>
-        <ol>Bedrooms: {{ post.bedrooms }}</ol>
-        <ol>Others: {{ post.others }}</ol>
-      </div>
-      <div class="resumen">
-        <h5>Price:</h5>
-        <p class="mat-card-subtitle">{{ post.price }}</p>
-      </div>
-      <div class="resumen">
-        <h5>Visit Schedules</h5>
-        <p class="schedule">{{ post.schedule1 }}</p>
-        <p class="schedule">{{ post.schedule2 }}</p>
-      </div>
-      <div class="resumen">
+<app-header-tenant></app-header-tenant>
+<div class="card-container" *ngIf="post && property">
+  <mat-card-content>
+    <div class="descrip">
+      <h2>{{ property.title }}</h2>
+      <p>{{ post.description }}</p>
+    </div>
+    <div class="spacer"></div>
+    <img mat-card-image [src]="property.photo" alt="">
+    <div class="characts">
+      <h2>Characteristics</h2>
+      <ol>Bathrooms: {{ property.bathrooms }}</ol>
+      <ol>Bedrooms: {{ property.bedrooms }}</ol>
+      <ol>Others: {{ property.others }}</ol>
+    </div>
+
+    <div class="resumen">
+      <h5>Price:</h5>
+      <p class="mat-card-subtitle">{{ property.price }}</p>
+    </div>
+    <div class="resumen">
+      <h5>Visit Schedules</h5>
+      <p class="schedule">{{ property.schedule1 }}</p>
+      <p class="schedule">{{ property.schedule2 }}</p>
+    </div>
+    <div class="resumen">
       <h5>Location</h5>
-          <p>{{ post.address }}</p>
-          <p>Available: {{ post.state }}</p>
-      </div>
-      <p class="space"></p>
-    </mat-card-content>
+      <p>{{ property.address }}</p>
+      <h5>State: {{ property.state }}</h5>
+    </div>
+    <p class="space"></p>
+  </mat-card-content>
 </div>
 
 <app-footer></app-footer>
