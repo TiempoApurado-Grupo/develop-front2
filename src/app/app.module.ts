@@ -8,13 +8,15 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import {MatIconModule} from "@angular/material/icon";
 import { FilterComponent } from './components/filter/filter.component';
+import { HederLogoComponent } from './components/heder-logo/heder-logo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    FilterComponent
+    FilterComponent,
+    HederLogoComponent
   ],
     imports: [
         BrowserModule,
