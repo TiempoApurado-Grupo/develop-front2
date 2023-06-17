@@ -12,6 +12,7 @@ import { HederLogoComponent } from './components/heder-logo/heder-logo.component
 import { RegisterComponent } from './components/register/register.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { LoginComponent } from './components/login/login.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LoginComponent } from './components/login/login.component';
     FilterComponent,
     HederLogoComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
