@@ -1,7 +1,7 @@
 
 <main>
   <app-header></app-header>
-    <div class="register">
+    <div class="container">
       <h2>Register</h2>
       <form [formGroup]="form" (ngSubmit)="addUser()">
         <input type="text" placeholder="Name" formControlName="name" required>
@@ -15,6 +15,5 @@
       <p>¿Ya tienes una cuenta?
         <a href="/login">Iniciar Sesion</a></p>
     </div>
-
   <app-footer></app-footer>
 </main>

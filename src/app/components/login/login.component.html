@@ -1,0 +1,17 @@
+
+<main>
+  <app-header></app-header>
+    <div class="container">
+      <img src="./assets/images/avatarUser.png" alt="">
+      <h2>Log In</h2>
+      <form [formGroup]="form" (ngSubmit)="validar()">
+        <input type="text" placeholder="Email" formControlName="email"  required>
+        <input type="password" placeholder="Password" formControlName="password"  required>
+        <button type="submit">Log In</button>
+      </form>
+      <p>¿No tienes cuenta?
+        <a href="/register"> Registrate!</a>
+      </p>
+    </div>
+  <app-footer></app-footer>
+</main>

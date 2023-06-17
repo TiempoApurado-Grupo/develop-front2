@@ -4,19 +4,28 @@ main{
   height: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background: #E7EFF6;
+  justify-content: center;
+  background: #064789;
 }
 .container{
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  width: 70%;
+  max-width: 800px;
+  margin: auto;
+}
+img{
+  width: 130px;
+  height: auto;
+  border-radius: 20px;
+  margin-top: 25px;
 }
 .container h2{
-  color:#002C3E;
+  color: #C9EEFF;
   font-size: 2.1rem;
-  font-weight: bold;
+  font-weight: 500;
   text-align: center;
   margin-top: 30px;
 }
@@ -25,17 +34,19 @@ main{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
 }
 .container form input{
-  margin: 0.7rem auto;
-  width: 70%;
-  background: #064789;
+  margin: 0.9rem auto;
+  width: 60%;
+  min-width: 300px;
+  background: #C9EEFF;
   border: none;
   padding: 10px;
   border-radius: 3px;
   font-size: 1.1rem;
-  font-weight: 500;
-  color: white;
+  font-weight: bold;
+  color: black;
 }
 button{
   margin: 10px auto;
@@ -47,7 +58,7 @@ button{
   max-width: 200px;
   border:1px solid black;
   border-radius: 5px;
-  background: transparent;
+  background: #E7EFF6;
   cursor: pointer;
   transition: 0.5s;
 }
@@ -58,13 +69,14 @@ button:hover{
 p{
   text-align: center;
   width: 80%;
-  margin: 15px auto 10px;
+  margin: 50px auto 10px;
   font-size: 1.1rem;
   font-weight: 500;
+  color: white;
 }
 a{
   text-decoration: none;
-  color: #002C3E;
+  color: #C9EEFF;
 }
 a:hover{
   text-decoration: underline;
