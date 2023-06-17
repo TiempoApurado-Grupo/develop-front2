@@ -9,6 +9,8 @@ import { HeaderComponent } from './components/header/header.component';
 import {MatIconModule} from "@angular/material/icon";
 import { FilterComponent } from './components/filter/filter.component';
 import { HederLogoComponent } from './components/heder-logo/heder-logo.component';
+import { RegisterComponent } from './components/register/register.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -16,14 +18,16 @@ import { HederLogoComponent } from './components/heder-logo/heder-logo.component
     FooterComponent,
     HeaderComponent,
     FilterComponent,
-    HederLogoComponent
+    HederLogoComponent,
+    RegisterComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatIconModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    ReactiveFormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

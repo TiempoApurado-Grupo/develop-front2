@@ -3,6 +3,7 @@ footer{
   background-color: #002C3E;
   margin:20px auto;
   padding: 20px;
+  width: 100vw;
 }
 footer p{
   margin: 0;
