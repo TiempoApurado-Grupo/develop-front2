@@ -14,6 +14,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { LoginComponent } from './components/login/login.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { SeeMessagesComponent } from './components/see-messages/see-messages.component';
+import { SendMessageComponent } from './components/send-message/send-message.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SeeMessagesComponent } from './components/see-messages/see-messages.com
     RegisterComponent,
     LoginComponent,
     WelcomeComponent,
-    SeeMessagesComponent
+    SeeMessagesComponent,
+    SendMessageComponent
   ],
   imports: [
     BrowserModule,
