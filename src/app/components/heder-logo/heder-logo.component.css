@@ -1,0 +1,11 @@
+header{
+  width: 100%;
+  background: #002C3E;
+  display: grid;
+  place-items: center;
+}
+
+img{
+  width: 150px;
+  margin: auto;
+}
