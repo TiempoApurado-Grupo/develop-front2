@@ -54,23 +54,7 @@ h2{
 .message button:hover{
   background: #5ab3d5;
 }
-.back{
-  margin: auto;
-  width: 200px;
-  background: #002C3E;
-  color: white;
-  font-weight: bold;
-  font-size: 1.1rem;
-  padding: 5px 0;
-  transition: 0.3s;
-  border: none;
-}
-.back:hover{
-  background: white;
-  border: 1px solid black;
-  color: #002C3E;
 
-}
 
 @media (min-width: 720px){
   h2{
