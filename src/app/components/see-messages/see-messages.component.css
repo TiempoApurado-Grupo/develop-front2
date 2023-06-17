@@ -1,0 +1,80 @@
+
+main{
+  width: 100vw;
+  height: auto;
+  background: #C9EEFF;
+}
+.container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+h2{
+  text-align: center;
+  margin: 20px auto;
+  font-size: 1.5rem;
+  color: #002C3E;
+  font-weight: bold;
+}
+.messages{
+  display: flex;
+  flex-wrap: wrap;
+}
+.message{
+  background: #064789;
+  width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 400px;
+}
+.message h3{
+  background: #D9D9D9;
+  width: 80%;
+  padding: 5px;
+  padding-left: 30px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #002C3E;
+}
+.message p{
+  background: #D9D9D9;
+  padding: 10px;
+  font-size: 1rem;
+  color: #002C3E;
+}
+.message button{
+  border: 1px solid white;
+  background: #C9EEFF;
+  font-size: 1rem;
+  width: 100px;
+  padding: 3px;
+}
+.message button:hover{
+  background: #5ab3d5;
+}
+.back{
+  margin: auto;
+  width: 200px;
+  background: #002C3E;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 5px 0;
+  transition: 0.3s;
+  border: none;
+}
+.back:hover{
+  background: white;
+  border: 1px solid black;
+  color: #002C3E;
+
+}
+
+@media (min-width: 720px){
+  h2{
+    font-size: 2rem;
+  }
+
+}
