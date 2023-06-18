@@ -4,7 +4,7 @@ export class Post {
   id: number;
   title: string;
   description: string;
-  characteristics: string;
+  caracteristics: string;
   location: string;
   price: number;
   category: string;
@@ -17,7 +17,7 @@ export class Post {
     this.id = 0;
     this.title = '';
     this.description = '';
-    this.characteristics = '';
+    this.caracteristics = '';
     this.location = '';
     this.price = 0;
     this.category = '';

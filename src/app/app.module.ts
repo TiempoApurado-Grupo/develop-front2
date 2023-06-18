@@ -23,6 +23,7 @@ import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {HttpClientModule} from "@angular/common/http";
 import { YourPostsComponent } from './components/your-posts/your-posts.component';
+import { SeePostComponent } from './components/see-post/see-post.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { YourPostsComponent } from './components/your-posts/your-posts.component
     SeeProfileComponent,
     EditProfileComponent,
     YourClientsComponent,
-    YourPostsComponent
+    YourPostsComponent,
+    SeePostComponent
   ],
   imports: [
     BrowserModule,

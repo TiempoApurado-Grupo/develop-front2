@@ -1,0 +1,34 @@
+
+ <main *ngIf="post">
+   <app-header></app-header>
+    <div class="container">
+      <section class="action">
+        <img src="{{post.imgUrl}} " alt="">
+        <a href="">Ver Perfil de Autor</a>
+        <button>Rent</button>
+        <button class="back">Back</button>
+      </section>
+      <section class="description">
+        <div class="info">
+          <h2>Title:</h2>
+          <p>{{post.title}}</p>
+        </div>
+        <div class="info">
+          <h2>Description:</h2>
+          <p>{{post.description}}</p>
+        </div>
+        <div class="info">
+          <h2>Characteristic</h2>
+          <p>{{post.caracteristics}}</p>
+        </div>
+        <div class="info">
+          <h2>Location</h2>
+          <p>{{post.location}}</p>
+        </div>
+
+        <h3>Precio: {{post.price}}</h3>
+
+      </section>
+    </div>
+   <app-footer></app-footer>
+ </main>
