@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PostService} from "../../services/post.service";
 import {Post} from "../../models/Post";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-see-post',
@@ -10,8 +11,7 @@ import {Post} from "../../models/Post";
 export class SeePostComponent implements OnInit{
 
   post !:Post;
-  constructor(private _servicePost: PostService,
-              ) {
+  constructor(private _servicePost: PostService, private route:ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -19,11 +19,14 @@ export class SeePostComponent implements OnInit{
   }
 
   obtenerPost(){
-    this._servicePost.getPostsById(2).subscribe({
-      next:(val:any)=>{
-        this.post = val;
-      }
-    })
+    this.route.paramMap.subscribe(params => {
+      const postId = Number(params.get('id'));
+      this._servicePost.getPostsById(postId).subscribe({
+        next: (val: any) => {
+          this.post = val;
+        }
+      });
+    });
   }
 
 }

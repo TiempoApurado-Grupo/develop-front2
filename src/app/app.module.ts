@@ -10,7 +10,7 @@ import {MatIconModule} from "@angular/material/icon";
 import { FilterComponent } from './components/filter/filter.component';
 import { HederLogoComponent } from './components/heder-logo/heder-logo.component';
 import { RegisterComponent } from './components/register/register.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { LoginComponent } from './components/login/login.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { SeeMessagesComponent } from './components/see-messages/see-messages.component';
@@ -24,6 +24,11 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import {HttpClientModule} from "@angular/common/http";
 import { YourPostsComponent } from './components/your-posts/your-posts.component';
 import { SeePostComponent } from './components/see-post/see-post.component';
+import {MatButtonModule} from "@angular/material/button";
+import { ListPostsComponent } from './components/list-posts/list-posts.component';
+import {MatCardModule} from "@angular/material/card";
+import { SearchPostComponent } from './components/search-post/search-post.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
 
 @NgModule({
   declarations: [
@@ -41,7 +46,9 @@ import { SeePostComponent } from './components/see-post/see-post.component';
     EditProfileComponent,
     YourClientsComponent,
     YourPostsComponent,
-    SeePostComponent
+    SeePostComponent,
+    ListPostsComponent,
+    SearchPostComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +59,11 @@ import { SeePostComponent } from './components/see-post/see-post.component';
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule,
+    MatCardModule,
+    MatToolbarModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

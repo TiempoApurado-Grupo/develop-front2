@@ -1,0 +1,54 @@
+.ads {
+  display: flex;
+  background-color: transparent;
+  padding: 50px;
+}
+.ad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 850px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.card-content{
+  display: flex;
+  background-color: #DEF5E5;
+  flex-direction: row;
+}
+.image-container {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+.img {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.open-new{
+  background-color: #002C3E;
+  color: white;
+  border-radius: 30px;
+  border: transparent;
+  padding: 10px 15px;
+
+}
+.open-new:hover{
+  background-color: #004669;
+  cursor: pointer;
+}
+.price{
+  padding: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #002C3E;
+}
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+
