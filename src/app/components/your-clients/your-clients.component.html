@@ -1,9 +1,9 @@
 
 <main>
   <app-header></app-header>
-    <div class="conatiner">
+    <div class="container">
       <h2>Your Clients</h2>
-        <div>
+        <div class="table">
           <mat-form-field>
             <mat-label>Filter</mat-label>
             <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
@@ -43,8 +43,8 @@
             <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
           </div>
         </div>
-
+      <button class="back">Back</button>
     </div>
-
   <app-footer></app-footer>
+
 </main>
