@@ -17,6 +17,11 @@ import { SeeMessagesComponent } from './components/see-messages/see-messages.com
 import { SendMessageComponent } from './components/send-message/send-message.component';
 import { SeeProfileComponent } from './components/see-profile/see-profile.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { YourClientsComponent } from './components/your-clients/your-clients.component';
+import {MatInputModule} from "@angular/material/input";
+import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -31,14 +36,19 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
     SeeMessagesComponent,
     SendMessageComponent,
     SeeProfileComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    YourClientsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
