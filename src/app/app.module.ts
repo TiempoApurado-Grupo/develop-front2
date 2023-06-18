@@ -16,6 +16,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { SeeMessagesComponent } from './components/see-messages/see-messages.component';
 import { SendMessageComponent } from './components/send-message/send-message.component';
 import { SeeProfileComponent } from './components/see-profile/see-profile.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SeeProfileComponent } from './components/see-profile/see-profile.compon
     WelcomeComponent,
     SeeMessagesComponent,
     SendMessageComponent,
-    SeeProfileComponent
+    SeeProfileComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,
