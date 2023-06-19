@@ -2,31 +2,27 @@ import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
 import {Post} from "../models/Post";
 import {HttpClient, HttpParams} from "@angular/common/http";
-import {User} from "../models/User";
-import {UserService} from "./user.service";
+import {Message} from "../models/Message";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MessageService {
 
-  constructor(private _http:HttpClient,
-              private _userService:UserService) { }
+  constructor(private _http:HttpClient,) { }
 
 
-  getAllPosts():Observable<Post>{
+  getAllMessages():Observable<Post>{
     return this._http.get<Post>('http://localhost:3000/messages');
   }
 
-  getPostsById(id:number){
+  getMessageById(id:number){
     return this._http.get<Post>(`http://localhost:3000/messages/${id}`)
   }
 
-  getUserAutor(id: number): Observable<User> {
-    return this._userService.getUserById(id);
-  }
-  getUserDestination(id:number): Observable<User>{
-    return this._userService.getUserById(id);
+  getMessagesByDestinationId(idDestination: number): Observable<Message[]> {
+    const params = new HttpParams().set('idDestination', idDestination.toString());
+    return this._http.get<Message[]>('http://localhost:3000/messages', { params });
   }
 
 }

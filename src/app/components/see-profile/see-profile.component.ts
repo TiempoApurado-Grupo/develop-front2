@@ -3,7 +3,6 @@ import {ActivatedRoute} from "@angular/router";
 import {Location} from "@angular/common";
 import {User} from "../../models/User";
 import {UserService} from "../../services/user.service";
-import {PostService} from "../../services/post.service";
 
 @Component({
   selector: 'app-see-profile',
@@ -15,7 +14,6 @@ export class SeeProfileComponent implements OnInit{
   user !:User;
   userAutorId !: number;
   constructor(private _serviceUser: UserService,
-              private _servicePost: PostService,
               private route:ActivatedRoute,
               private location: Location) {
   }
@@ -28,7 +26,7 @@ export class SeeProfileComponent implements OnInit{
     this.route.paramMap.subscribe(params => {
       this.userAutorId = Number(params.get('id'));
 
-      this._servicePost.getUserAutor(this.userAutorId).subscribe({
+      this._serviceUser.getUserById(this.userAutorId).subscribe({
         next:(val:any)=>{
           this.user = val;
         }

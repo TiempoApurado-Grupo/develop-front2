@@ -27,8 +27,4 @@ export class PostService {
     return this._http.get<Post[]>(`http://localhost:3000/posts?search=${filterItem}`, { params });
   }
 
-  getUserAutor(id: number): Observable<User> {
-    return this._userService.getUserById(id);
-  }
-
 }
