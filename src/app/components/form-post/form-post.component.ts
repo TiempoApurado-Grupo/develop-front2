@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
+import {Location} from "@angular/common";
 
 interface Category {
   value: string;
@@ -10,13 +13,42 @@ interface Category {
   styleUrls: ['./form-post.component.css'],
 })
 export class FormPostComponent {
-  // @ts-ignore
-  selectedValue: string;
 
-  categories: Category[] = [
-    {value: 'department-0', viewValue: 'Department'},
-    {value: 'business premises-1', viewValue: 'Business premises'},
-    {value: 'room-2', viewValue: 'Room'},
-    {value: 'home-3', viewValue: 'Home'},
+
+  categorias: string[] = [
+    'rooms', 'department', 'houses', 'commercialSpace',
   ];
+
+  form:FormGroup;
+  constructor(private _formB:FormBuilder,
+              public _router:Router,
+              private location: Location) {
+
+    this.form = this._formB.group({
+      title: ['', Validators.required],
+      description: ['', Validators.required],
+      caracteristics: ['', Validators.required],
+      location: ['', Validators.required],
+      price: ['', Validators.required],
+      category: ['', Validators.required],
+    });
+  }
+
+
+  addPost(){
+      if (this.form.valid) {
+        alert("Valid")
+      }else{
+        alert("Invalid")
+      }
+
+      alert("Se publico tu inmueble");
+      this.volver();
+  }
+
+
+  volver(){
+    this.location.back();
+  }
+
 }

@@ -6,11 +6,11 @@
         <section class="photo">
           <img src="./assets/images/userCircle.png" alt="">
           <p>⭐⭐⭐⭐⭐</p>
-          <button>Send Message</button>
+          <button [routerLink]="['/sendmessage', userAutorId]">Send Message</button>
         </section>
         <section class="description">
-          <h2>Nombre Grande</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elferendis placeat reiciendis rem sapiente, sint totam. Harum.</p>
+          <h2>{{user.name}} {{user.lastName}}</h2>
+          <p>{{user.description}}</p>
         </section>
       </div>
       <form action="">
@@ -18,7 +18,7 @@
         <button type="submit">Save</button>
       </form>
 
-      <button class="back">Back</button>
+      <button class="back" (click)="volver()">Back</button>
 
     </div>
 

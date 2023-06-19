@@ -1,16 +1,16 @@
 .mat-toolbar-row{
   background-color: #DEF5E5;
   height: 100px;
+  display: flex;
+  justify-content: center;
 }
 .mat-form-field{
-  width: 600px;
+  width: 85%;
   background-color: #DEF5E5;
   padding: 5px;
 }
 .content {
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
   height: 80px;
   width: 700px;
 }

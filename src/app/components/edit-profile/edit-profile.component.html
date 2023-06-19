@@ -3,7 +3,7 @@
   <div class="container">
     <div class="edit">
       <img src="./assets/images/userCircle.png" alt="">
-        <form action="">
+        <form (ngSubmit)="updateUser()">
           <input class="inputbox" type="text" placeholder="Name">
           <input class="inputbox"  type="text" placeholder="Last Name">
           <input class="inputbox"  type="number" placeholder="Age">
@@ -14,9 +14,9 @@
         </form>
       </div>
     <div class="actions">
-      <button>See Your Posts</button>
-      <button>See Your Clients</button>
-      <button class="back">Back</button>
+      <button [routerLink]="['/yourposts']">See Your Posts</button>
+      <button [routerLink]="['/yourclients']">See Your Clients</button>
+      <button class="back" (click)="volver()">Back</button>
     </div>
 
 

@@ -39,6 +39,8 @@ export class RegisterComponent {
     } else {
       alert('No valido');
     }
+
+    this._router.navigate(["/welcome"])
   }
 
 }

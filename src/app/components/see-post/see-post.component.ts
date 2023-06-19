@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {PostService} from "../../services/post.service";
 import {Post} from "../../models/Post";
 import {ActivatedRoute} from "@angular/router";
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-see-post',
@@ -11,7 +13,9 @@ import {ActivatedRoute} from "@angular/router";
 export class SeePostComponent implements OnInit{
 
   post !:Post;
-  constructor(private _servicePost: PostService, private route:ActivatedRoute) {
+  constructor(private _servicePost: PostService,
+              private route:ActivatedRoute,
+              private location: Location) {
   }
 
   ngOnInit(): void {
@@ -29,4 +33,11 @@ export class SeePostComponent implements OnInit{
     });
   }
 
+  rentar(){
+    alert("Rentaste esta propiedad");
+    this.volver();
+  }
+  volver(){
+    this.location.back();
+  }
 }

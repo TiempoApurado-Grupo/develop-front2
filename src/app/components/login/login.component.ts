@@ -26,6 +26,8 @@ export class LoginComponent {
       }else{
         alert('Invalid');
       }
+
+      this._router.navigate(['/listposts'])
     }
 
 }

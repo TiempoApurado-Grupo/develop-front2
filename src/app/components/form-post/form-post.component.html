@@ -1,75 +1,42 @@
-<div class="mat-card">
-  <mat-card-title>
-    Data of your property
-  </mat-card-title>
-  <form>
-    <mat-card-content>
-      <div class="row">
-        <mat-form-field appearance="outline" class="custom-field">
-          <mat-label>Title</mat-label>
-          <input matInput type="text" placeholder="Enter a title of your property" formControlName="ownerFirstName" required >
-        </mat-form-field>
+
+<main>
+  <app-header></app-header>
+  <div class="container">
+    <h2>Datas of your property</h2>
+    <form [formGroup]="form" (ngSubmit)="addPost()">
+      <div class="inputbox" id="title">
+        <label>Title</label>
+        <input type="text" formControlName="title">
       </div>
-      <div class="row">
-        <mat-form-field appearance="outline" class="custom-field">
-          <mat-label>Description</mat-label>
-          <textarea matInput placeholder=""></textarea>
-        </mat-form-field>
+      <div class="inputbox" id="description">
+        <textarea placeholder="Description"  formControlName="description"></textarea>
+      </div>
+      <div class="inputbox" id="caracterist">
+        <textarea placeholder="Characteristcs" formControlName="caracteristics"></textarea>
+      </div>
+      <div class="inputbox">
+        <label>Price</label>
+        <input type="number" formControlName="price">
+      </div>
+      <div class="inputbox">
+        <label>Category</label>
+        <select formControlName="category">
+          <option *ngFor="let category of categorias" [value]="category">
+            {{ category }}
+          </option>
+        </select>
+      </div>
+      <div class="inputbox" id="location">
+        <textarea placeholder="Location" formControlName="location"></textarea>
       </div>
 
-      <div class="row">
-        <p>Characteristics</p>
+      <div class="actions">
+        <button type="submit">Post</button>
+        <button type="button" class="back" (click)="volver()">Back!</button>
       </div>
-      <div class="row">
-        <mat-form-field appearance="outline">
-          <mat-label></mat-label>
-          <textarea matInput placeholder=""></textarea>
-        </mat-form-field>
+    </form>
+  </div>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Price</mat-label>
-          <input matInput type="text" placeholder="Enter a price" formControlName="brandName" required>
-          <mat-icon matPrefix style="color:#064789">payments</mat-icon>
-        </mat-form-field>
-      </div>
-      <div class="row">
-      <mat-form-field appearance="outline">
-        <mat-label>Photo</mat-label>
-        <input matInput type="url" placeholder="Enter a photo" formControlName="brandName" required>
-        <mat-icon matPrefix style="color:#064789">image</mat-icon>
-      </mat-form-field>
+  <app-footer></app-footer>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Category</mat-label>
-          <mat-select [(ngModel)]="selectedValue" name="categories">
-            <mat-option *ngFor="let category of categories" [value]="category.value">
-              {{category.viewValue}}
-            </mat-option>
-          </mat-select>
-          <mat-icon matPrefix style="color:#064789">category</mat-icon>
-        </mat-form-field>
-      </div>
-
-
-      <div class="row">
-        <p>Location</p>
-      </div>
-      <div class="row" >
-        <mat-form-field appearance="outline">
-          <mat-label>Location</mat-label>
-          <input matInput type="text" placeholder="Enter location" formControlName="websiteUrl">
-          <mat-icon matPrefix style="color:#064789">navigation</mat-icon>
-        </mat-form-field>
-      </div>
-      <mat-card-actions>
-        <div class="row">
-        <button mat-raised-button color="primary">Post</button>
-        </div>
-        <div class="row">
-        <button mat-raised-button color="primary" type="submit">Back</button>
-        </div>
-      </mat-card-actions>
-
-    </mat-card-content>
-  </form>
-</div>
+</main>

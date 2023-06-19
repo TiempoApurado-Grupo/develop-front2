@@ -29,6 +29,10 @@ import { ListPostsComponent } from './components/list-posts/list-posts.component
 import {MatCardModule} from "@angular/material/card";
 import { SearchPostComponent } from './components/search-post/search-post.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
+import { HomeComponent } from './components/home/home.component';
+import {FormPostComponent} from "./components/form-post/form-post.component";
+import {MatOptionModule} from "@angular/material/core";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -48,7 +52,9 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     YourPostsComponent,
     SeePostComponent,
     ListPostsComponent,
-    SearchPostComponent
+    SearchPostComponent,
+    HomeComponent,
+    FormPostComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +69,9 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     MatButtonModule,
     MatCardModule,
     MatToolbarModule,
-    FormsModule
+    FormsModule,
+    MatOptionModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

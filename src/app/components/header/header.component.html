@@ -1,18 +1,22 @@
 
 <header>
   <div class="container">
+
     <div>
-      <img id="logo" src="./assets/images/RENTSTATEname.png" alt="">
+      <img id="logo" src="./assets/images/RENTSTATEname.png" >
     </div>
+
     <span></span>
     <div class="options">
-      <button>Post</button>
+      <button style="margin-right: 5px" [routerLink]="['/listposts']">See Post</button>
+      <button [routerLink]="['/postproperty']">Post</button>
       <span></span>
-      <a  href=""><img id="message" src="./assets/images/messagLogo.png" alt=""></a>
-      <a  href=""><img id="user" src="./assets/images/avatarUser.png" alt=""></a>
+      <a  [routerLink]="['/messages']"><img id="message" src="./assets/images/messagLogo.png" alt=""></a>
+      <a  [routerLink]="['/myprofile']"><img id="user" src="./assets/images/avatarUser.png" alt=""></a>
     </div>
   </div>
 </header>
+
 
 
 

@@ -4,6 +4,7 @@ import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {User} from "../../models/User";
 import {UserService} from "../../services/user.service";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-your-clients',
@@ -17,7 +18,8 @@ export class YourClientsComponent implements OnInit{
   displayedColumns: string[] = ['name', 'lastName', 'gender'];
   dataSource !: MatTableDataSource<User>;
 
-  constructor(private _userService: UserService) {
+  constructor(private _userService: UserService,
+              private location:Location) {
 
   }
 
@@ -53,6 +55,12 @@ export class YourClientsComponent implements OnInit{
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+
+  volver(){
+    this.location.back();
+
   }
 
 }
