@@ -1,5 +1,5 @@
 main{
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,7 +11,6 @@ main{
   justify-content: center;
 }
 .container{
-  flex: 1;
 }
 img{
   width: 90px;
@@ -93,5 +92,10 @@ form button{
   #desc{
     grid-column: span 2;
   }
-
+  main{
+    height: 100%;
+  }
+  .container{
+    flex:1;
+  }
 }

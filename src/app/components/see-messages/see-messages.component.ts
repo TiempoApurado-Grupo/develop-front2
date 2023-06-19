@@ -1,10 +1,68 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Location} from "@angular/common";
+import {Message} from "../../models/Message";
+import {MessageService} from "../../services/message.service";
+import {UserService} from "../../services/user.service";
+import {User} from "../../models/User";
 
 @Component({
   selector: 'app-see-messages',
   templateUrl: './see-messages.component.html',
   styleUrls: ['./see-messages.component.css']
 })
-export class SeeMessagesComponent {
+export class SeeMessagesComponent implements OnInit{
+
+
+  myMessages:Message[]=[];
+  authors: string[] = [];
+  constructor(private location:Location,
+              private _serviceMessage: MessageService,
+              private _serviceUser: UserService) {
+
+
+  }
+
+  ngOnInit(): void {
+
+    this.obtenerMensajes();
+
+  }
+
+  obtenerMensajes(): void {
+    const id = window.sessionStorage.getItem('userLogeadoID');
+
+    this._serviceMessage.getMessagesByDestinationId(Number(id)).subscribe(
+      (messages: Message[]) => {
+        this.myMessages = messages;
+        this.obtenerAutores();
+      },
+      (error) => {
+        console.log('Error al obtener los mensajes:', error);
+      }
+    );
+  }
+
+  obtenerAutores(): void {
+    const originIds = this.myMessages.map(message => message.idOrigin);
+
+    originIds.forEach(id => {
+      this._serviceUser.getUserById(id).subscribe({
+        next: (user: User) => {
+          const author = user.name + " " + user.lastName;
+          this.authors[id] = author;
+        }
+      });
+    });
+  }
+
+  getAutor(id: number): string {
+    return this.authors[id] || '';
+  }
+
+  volver(){
+    this.location.back();
+  }
+
+
 
 }
