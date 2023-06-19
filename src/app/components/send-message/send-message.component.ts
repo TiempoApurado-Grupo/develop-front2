@@ -8,7 +8,6 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MessageService} from "../../services/message.service";
 import {IMessage} from "../../models/IMessage";
 
-
 @Component({
   selector: 'app-send-message',
   templateUrl: './send-message.component.html',
@@ -38,6 +37,10 @@ export class SendMessageComponent implements OnInit{
     };
   }
   ngOnInit(): void {
+    if(!this._serviceUser.isLoged()){
+      this.location.back();
+    }
+
     this.obtenerDestinationUser();
   }
 
@@ -68,9 +71,7 @@ export class SendMessageComponent implements OnInit{
         }
       })
     this.volver();
-
   }
-
 
   volver(){
     this.location.back();

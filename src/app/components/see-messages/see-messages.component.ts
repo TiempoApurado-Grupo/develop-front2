@@ -24,6 +24,10 @@ export class SeeMessagesComponent implements OnInit{
 
   ngOnInit(): void {
 
+    if(!this._serviceUser.isLoged()){
+      this.location.back()
+    }
+
     this.obtenerMensajes();
 
   }

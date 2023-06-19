@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {catchError, map, Observable, of} from "rxjs";
+import {Observable} from "rxjs";
 import {User} from "../models/User";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,8 @@ export class UserService {
   users:User[]=[];
   user!: User;
 
-  constructor(private _http:HttpClient) {
+  constructor(private _http:HttpClient,
+              private _router:Router) {
 
   }
   getAllUsers():Observable<User>{
@@ -52,10 +54,6 @@ export class UserService {
   }
 
 
-
-
-
-
   loginUser(email: string, pass: string) {
     this.getAllUsers().subscribe((val: any) => {
       this.users = val;
@@ -63,14 +61,23 @@ export class UserService {
     });
   }
   validarLogin(email: string, pass: string) {
+
     const user = this.users.find((u: User) => u.email === email && u.password === pass);
     if (user) {
-      console.log('Login exitoso');
-      window.sessionStorage.setItem('userLogeadoID', user.id.toString());
-      return true;
+      window.sessionStorage.setItem('userLogedId', user.id.toString());
+      alert("Bienvenido")
+      this._router.navigate(['/listposts'])
 
     } else {
-      console.log('Credenciales inválidas');
+      alert("Credenciales invalidas");
+
+    }
+  }
+
+  isLoged(){
+    if(window.sessionStorage.getItem('userLogedId')){
+      return true;
+    }else{
       return false;
     }
   }

@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {Location} from "@angular/common";
+import {UserService} from "../../services/user.service";
 
 interface Category {
   value: string;
@@ -12,7 +13,7 @@ interface Category {
   templateUrl: './form-post.component.html',
   styleUrls: ['./form-post.component.css'],
 })
-export class FormPostComponent {
+export class FormPostComponent implements OnInit{
 
 
   categorias: string[] = [
@@ -21,7 +22,7 @@ export class FormPostComponent {
 
   form:FormGroup;
   constructor(private _formB:FormBuilder,
-              public _router:Router,
+              private _userService:UserService,
               private location: Location) {
 
     this.form = this._formB.group({
@@ -33,7 +34,11 @@ export class FormPostComponent {
       category: ['', Validators.required],
     });
   }
-
+  ngOnInit(): void {
+    if(!this._userService.isLoged()){
+      this.location.back();
+    }
+  }
 
   addPost(){
       if (this.form.valid) {
@@ -50,5 +55,7 @@ export class FormPostComponent {
   volver(){
     this.location.back();
   }
+
+
 
 }
