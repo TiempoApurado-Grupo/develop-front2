@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {catchError, map, Observable, of} from "rxjs";
 import {User} from "../models/User";
 
 @Injectable({
@@ -9,6 +9,7 @@ import {User} from "../models/User";
 export class UserService {
 
   users:User[]=[];
+  user!: User;
 
   constructor(private _http:HttpClient) {
 
@@ -20,6 +21,39 @@ export class UserService {
   getUserById(id:number){
     return this._http.get<User>(`http://localhost:3000/users/${id}`)
   }
+
+
+
+  getListClientesId(id: number): number[] {
+
+    let listClientes: number[] = [];
+
+    this.getUserById(id).subscribe({
+      next: (val: User) => {
+
+        this.user = val;
+
+        console.log(this.user);
+        console.log(this.user.name);
+
+        console.log(this.user.listClientes[0])
+
+        console.log("VEGUETA");
+
+        listClientes = this.user.listClientes;
+        console.log(listClientes);
+      },
+      error: (error) => {
+        console.error(error);
+      }
+    });
+
+    return listClientes;
+  }
+
+
+
+
 
 
   loginUser(email: string, pass: string) {
@@ -40,4 +74,5 @@ export class UserService {
       return false;
     }
   }
+
 }

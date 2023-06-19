@@ -1,18 +1,22 @@
-<main>
+
+
+<main *ngIf="userDestination">
   <app-header></app-header>
-  <div class="container">
-    <h2>Send Message</h2>
+  <form [formGroup]="form" (ngSubmit)="sendMessahe()">
+    <div class="container">
+      <h2>Send Message</h2>
 
-      <div class="message">
-        <h3>To: {{userDestination.name}} {{userDestination.lastName}}</h3>
-        <textarea></textarea>
+        <div class="message">
+          <h3>To: {{userDestination.name}} {{userDestination.lastName}}</h3>
+          <textarea placeholder="Write your message here" formControlName="contentMessage"></textarea>
+        </div>
+
       </div>
-
+    <div class="buttons">
+        <button class="back" (click)="volver()" type="button">Back</button>
+        <button class="back" type="submit">Send</button>
     </div>
-  <div class="buttons">
-      <button class="back" (click)="volver()">Back</button>
-      <button class="back" (click) = "sendMessahe()">Send</button>
-  </div>
+  </form>
   <app-footer></app-footer>
 </main>
 
