@@ -33,6 +33,9 @@ import { HomeComponent } from './components/home/home.component';
 import {FormPostComponent} from "./components/form-post/form-post.component";
 import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -54,7 +57,8 @@ import {MatSelectModule} from "@angular/material/select";
     ListPostsComponent,
     SearchPostComponent,
     HomeComponent,
-    FormPostComponent
+    FormPostComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +75,9 @@ import {MatSelectModule} from "@angular/material/select";
     MatToolbarModule,
     FormsModule,
     MatOptionModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
