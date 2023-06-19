@@ -24,14 +24,12 @@ export class LoginComponent {
     validar(){
 
       if(this.form.valid){
-        alert('Valido');
-        this._userService.loginUser(this.form.get('email')?.value,this.form.get('password')?.value);
+
+        this._userService.loginUser(this.form.get('email')?.value,this.form.get('password')?.value)
 
       }else{
-        alert('Invalid');
+        alert('Form Invalid');
       }
 
-      this._router.navigate(['/listposts'])
     }
-
 }

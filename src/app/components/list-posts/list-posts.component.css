@@ -15,20 +15,23 @@
 
 .card-content{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
   background-color: #DEF5E5;
   padding: 10px;
 }
 
 .img {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
+  margin: 20px auto 30px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 10px;
 }
 .text-container{
   width: 80%;
   text-align: center;
+  margin: auto;
 }
 .open-new{
   background-color: #002C3E;

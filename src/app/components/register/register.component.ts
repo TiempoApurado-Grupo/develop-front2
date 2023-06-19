@@ -42,5 +42,4 @@ export class RegisterComponent {
 
     this._router.navigate(["/welcome"])
   }
-
 }

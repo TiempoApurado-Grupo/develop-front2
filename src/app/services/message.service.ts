@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
 import {Post} from "../models/Post";
 import {HttpClient, HttpParams} from "@angular/common/http";
-import {Message} from "../models/Message";
+import {IMessage} from "../models/IMessage";
 
 @Injectable({
   providedIn: 'root'
@@ -20,9 +20,13 @@ export class MessageService {
     return this._http.get<Post>(`http://localhost:3000/messages/${id}`)
   }
 
-  getMessagesByDestinationId(idDestination: number): Observable<Message[]> {
+  addMessage(data:IMessage){
+    return this._http.post('http://localhost:3000/messages',data);
+  }
+
+  getMessagesByDestinationId(idDestination: number): Observable<IMessage[]> {
     const params = new HttpParams().set('idDestination', idDestination.toString());
-    return this._http.get<Message[]>('http://localhost:3000/messages', { params });
+    return this._http.get<IMessage[]>('http://localhost:3000/messages', { params });
   }
 
 }
