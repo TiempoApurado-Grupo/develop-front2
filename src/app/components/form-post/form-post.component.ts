@@ -4,16 +4,19 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {Location} from "@angular/common";
 import {PostService} from "../../services/post.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {UserService} from "../../services/user.service";
 
 interface Category {
   value: string;
   viewValue: string;
 }
+
 @Component({
   selector: 'app-form-post',
   templateUrl: './form-post.component.html',
   styleUrls: ['./form-post.component.css'],
 })
+
 export class FormPostComponent implements OnInit {
 
   categories: string[] = [
@@ -27,9 +30,8 @@ export class FormPostComponent implements OnInit {
               private postService:PostService,
               public router: Router,
               private route: ActivatedRoute,
-              private snackBar: MatSnackBar,
-              private location: Location) {
-
+              private snackBar: MatSnackBar,)
+ {
     this.form = this._formB.group({
       title: ['', Validators.required],
       description: ['', Validators.required],
@@ -42,15 +44,19 @@ export class FormPostComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
+    if(!this._userService.isLoged()){
+      this.location.back();
+    }
+    
     this.route.params.subscribe(params => {
       if (params['id']) {
         this.isEdit = true;
         this.postService.getItem(params['id']).subscribe((result: any) => {
           this.form.patchValue(result);
         });
-      }
-    });
-  }
+        
+
   addPost() {
     if (this.form.valid) {
       if (this.isEdit){
@@ -88,4 +94,6 @@ export class FormPostComponent implements OnInit {
   {
     this.location.back();
   }
+
+
 }

@@ -12,7 +12,7 @@
       <button [routerLink]="['/post/new']">Post</button>
       <span></span>
       <a  [routerLink]="['/messages']"><img id="message" src="./assets/images/messagLogo.png" alt=""></a>
-      <a  [routerLink]="['/myprofile']"><img id="user" src="./assets/images/avatarUser.png" alt=""></a>
+      <a  (click)="isLoged()" [routerLink]="['/myprofile']"><img id="user" src="./assets/images/avatarUser.png" alt=""></a>
     </div>
   </div>
 </header>

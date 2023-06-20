@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Location} from "@angular/common";
-import {Message} from "../../models/Message";
+import {IMessage} from "../../models/IMessage";
 import {MessageService} from "../../services/message.service";
 import {UserService} from "../../services/user.service";
 import {User} from "../../models/User";
@@ -13,7 +13,7 @@ import {User} from "../../models/User";
 export class SeeMessagesComponent implements OnInit{
 
 
-  myMessages:Message[]=[];
+  myMessages:IMessage[]=[];
   authors: string[] = [];
   constructor(private location:Location,
               private _serviceMessage: MessageService,
@@ -24,6 +24,10 @@ export class SeeMessagesComponent implements OnInit{
 
   ngOnInit(): void {
 
+    if(!this._serviceUser.isLoged()){
+      this.location.back()
+    }
+
     this.obtenerMensajes();
 
   }
@@ -32,7 +36,7 @@ export class SeeMessagesComponent implements OnInit{
     const id = window.sessionStorage.getItem('userLogeadoID');
 
     this._serviceMessage.getMessagesByDestinationId(Number(id)).subscribe(
-      (messages: Message[]) => {
+      (messages: IMessage[]) => {
         this.myMessages = messages;
         this.obtenerAutores();
       },
