@@ -11,8 +11,8 @@
       <div class="inputbox" id="description">
         <textarea placeholder="Description"  formControlName="description"></textarea>
       </div>
-      <div class="inputbox" id="caracterist">
-        <textarea placeholder="Characteristcs" formControlName="caracteristics"></textarea>
+      <div class="inputbox" id="characteristics">
+        <textarea placeholder="Characteristics" formControlName="characteristics"></textarea>
       </div>
       <div class="inputbox">
         <label>Price</label>
@@ -21,7 +21,7 @@
       <div class="inputbox">
         <label>Category</label>
         <select formControlName="category">
-          <option *ngFor="let category of categorias" [value]="category">
+          <option *ngFor="let category of categories" [value]="category">
             {{ category }}
           </option>
         </select>
@@ -29,10 +29,19 @@
       <div class="inputbox" id="location">
         <textarea placeholder="Location" formControlName="location"></textarea>
       </div>
+      <div class="inputbox" id="imgUrl">
+        <textarea placeholder="Image" formControlName="imgUrl"></textarea>
+      </div>
 
       <div class="actions">
-        <button type="submit">Post</button>
-        <button type="button" class="back" (click)="volver()">Back!</button>
+        <button mat-raised-button color="warn" type="button" [mat-dialog-close]="false" routerLink="/yourposts">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">
+        {{form.value.id? 'Update':'Post'}}
+        <mat-icon>{{form.value.id? 'edit':'add'}}</mat-icon>
+
+        </button>
+
+        <button mat-raised-button color="primary" type="button" class="back" (click)="back()">Back!</button>
       </div>
     </form>
   </div>

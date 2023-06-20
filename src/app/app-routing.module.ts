@@ -24,6 +24,8 @@ const routes: Routes = [
   {path: 'seeprofile/:id', component:SeeProfileComponent},
   {path: 'editprofile', component:EditProfileComponent},
   {path: 'post', component:FormPostComponent},
+  {path: 'post/edit/:id', component:FormPostComponent},
+  {path: 'post/new', component:FormPostComponent},
   {path: 'yourposts', component:YourPostsComponent},
   {path: 'yourclients', component:YourClientsComponent},
   {path: 'welcome', component: WelcomeComponent},
