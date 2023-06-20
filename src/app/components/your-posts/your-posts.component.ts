@@ -3,7 +3,7 @@ import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 
-import {Post} from "../../models/Post";
+import {IPost} from "../../models/IPost";
 import {PostService} from "../../services/post.service";
 import {Location} from "@angular/common";
 import {MatSnackBar} from "@angular/material/snack-bar";
@@ -18,10 +18,10 @@ import {ConfirmationDialogComponent} from "../confirmation-dialog/confirmation-d
 })
 export class YourPostsComponent implements OnInit{
 
-  listPosts:Post[]=[]
+  listPosts:IPost[]=[]
 
   displayedColumns: string[] = ['image', 'category', 'price', 'action'];
-  dataSource !: MatTableDataSource<Post>;
+  dataSource !: MatTableDataSource<IPost>;
 
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort !: MatSort;
@@ -44,7 +44,7 @@ export class YourPostsComponent implements OnInit{
         this.listPosts = val;
         console.log(this.listPosts);
 
-        this.dataSource = new MatTableDataSource<Post>(this.listPosts);
+        this.dataSource = new MatTableDataSource<IPost>(this.listPosts);
 
         setTimeout(() => {
           this.dataSource.paginator = this.paginator;

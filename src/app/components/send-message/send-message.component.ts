@@ -33,7 +33,8 @@ export class SendMessageComponent implements OnInit{
     this.m = {
       content: '',
       idOrigin: 0,
-      idDestination: 0
+      idDestination: 0,
+      read:false,
     };
   }
   ngOnInit(): void {
@@ -61,8 +62,8 @@ export class SendMessageComponent implements OnInit{
 
   sendMessahe(){
 
-      const id = window.sessionStorage.getItem('userLogeadoID');
-      this.m.idOrigin = Number(id);
+
+      this.m.idOrigin = this._serviceUser.idUserLoged();
       this.m.content = this.form.get('contentMessage')?.value;
 
       this._serviceMessage.addMessage(this.m).subscribe({

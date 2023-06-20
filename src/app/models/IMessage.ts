@@ -4,4 +4,5 @@ export interface IMessage{
   content: string;
   idOrigin: number;
   idDestination: number;
+  read:boolean;
 }

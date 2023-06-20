@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
-import {catchError, Observable, switchMap} from "rxjs";
-import {Post} from "../models/Post";
+import {Observable, switchMap} from "rxjs";
+import {IPost} from "../models/IPost";
 import {UserService} from "./user.service";
-import {User} from "../models/User";
 
 @Injectable({
   providedIn: 'root'
@@ -19,31 +18,31 @@ export class PostService {
     })
   }
 
-  getAllPosts():Observable<Post>{
-    return this._http.get<Post>('http://localhost:3000/posts');
+  getAllPosts():Observable<IPost>{
+    return this._http.get<IPost>('http://localhost:3000/posts');
   }
 
   getPostsById(id:number){
-    return this._http.get<Post>(`http://localhost:3000/posts/${id}`)
+    return this._http.get<IPost>(`http://localhost:3000/posts/${id}`)
   }
 
-  searchPosts(filterItem: string): Observable<Post[]> {
+  searchPosts(filterItem: string): Observable<IPost[]> {
     const params = new HttpParams().set('q', filterItem);
-    return this._http.get<Post[]>(`http://localhost:3000/posts?search=${filterItem}`, { params });
+    return this._http.get<IPost[]>(`http://localhost:3000/posts?search=${filterItem}`, { params });
   }
 
-  createItem(item: any): Observable<Post>{
-    return this._http.post<Post>('http://localhost:3000/posts', JSON.stringify(item), this.httpOptions)
+  createItem(item: any): Observable<IPost>{
+    return this._http.post<IPost>('http://localhost:3000/posts', JSON.stringify(item), this.httpOptions)
   }
 
-  getItem(id: number): Observable<Post>{
-    return this._http.get<Post>(`http://localhost:3000/posts/${id}`)
+  getItem(id: number): Observable<IPost>{
+    return this._http.get<IPost>(`http://localhost:3000/posts/${id}`)
   }
-  updateItem(id: number, item: any): Observable<Post>{
-    return this._http.put<Post>(`http://localhost:3000/posts/${id}`, JSON.stringify(item), this.httpOptions)
+  updateItem(id: number, item: any): Observable<IPost>{
+    return this._http.put<IPost>(`http://localhost:3000/posts/${id}`, JSON.stringify(item), this.httpOptions)
   }
-  deleteItem(id: number): Observable<Post>{
-    return this._http.delete<Post>(`http://localhost:3000/posts/${id}`, this.httpOptions)
+  deleteItem(id: number): Observable<IPost>{
+    return this._http.delete<IPost>(`http://localhost:3000/posts/${id}`, this.httpOptions)
   }
 
 }

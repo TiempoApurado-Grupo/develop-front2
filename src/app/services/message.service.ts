@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
-import {Post} from "../models/Post";
+import {IPost} from "../models/IPost";
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {IMessage} from "../models/IMessage";
 
@@ -12,12 +12,12 @@ export class MessageService {
   constructor(private _http:HttpClient,) { }
 
 
-  getAllMessages():Observable<Post>{
-    return this._http.get<Post>('http://localhost:3000/messages');
+  getAllMessages():Observable<IPost>{
+    return this._http.get<IPost>('http://localhost:3000/messages');
   }
 
   getMessageById(id:number){
-    return this._http.get<Post>(`http://localhost:3000/messages/${id}`)
+    return this._http.get<IPost>(`http://localhost:3000/messages/${id}`)
   }
 
   addMessage(data:IMessage){

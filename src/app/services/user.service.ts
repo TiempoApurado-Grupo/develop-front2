@@ -81,5 +81,8 @@ export class UserService {
       return false;
     }
   }
+  idUserLoged(){
+    return Number(window.sessionStorage.getItem('userLogedId'));
+  }
 
 }

@@ -33,9 +33,8 @@ export class SeeMessagesComponent implements OnInit{
   }
 
   obtenerMensajes(): void {
-    const id = window.sessionStorage.getItem('userLogeadoID');
 
-    this._serviceMessage.getMessagesByDestinationId(Number(id)).subscribe(
+    this._serviceMessage.getMessagesByDestinationId(Number(this._serviceUser.idUserLoged())).subscribe(
       (messages: IMessage[]) => {
         this.myMessages = messages;
         this.obtenerAutores();

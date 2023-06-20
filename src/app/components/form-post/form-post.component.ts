@@ -5,6 +5,7 @@ import {Location} from "@angular/common";
 import {PostService} from "../../services/post.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {UserService} from "../../services/user.service";
+import {IPost} from "../../models/IPost";
 
 interface Category {
   value: string;
@@ -25,12 +26,15 @@ export class FormPostComponent implements OnInit {
 
   form: FormGroup;
   isEdit: boolean = false;
+  postNew!:IPost;
 
   constructor(private _formB: FormBuilder,
               private postService:PostService,
               public router: Router,
               private route: ActivatedRoute,
-              private snackBar: MatSnackBar,)
+              private snackBar: MatSnackBar,
+              private _userService:UserService,
+              private location:Location)
  {
     this.form = this._formB.group({
       title: ['', Validators.required],
@@ -40,60 +44,86 @@ export class FormPostComponent implements OnInit {
       price: ['', Validators.required],
       imgUrl: ['', Validators.required],
       category: ['', Validators.required],
+
     });
+
   }
 
+
   ngOnInit(): void {
-    
+
     if(!this._userService.isLoged()){
       this.location.back();
     }
-    
+
+    this.postNew = {
+      title: '',
+      description: '',
+      characteristics: '',
+      location: '',
+      price: 0,
+      category: '',
+      imgUrl: '',
+      state: true,
+      userAutorId: Number(window.sessionStorage.getItem('userLogedId')),
+      userRentId: -1,
+    };
+
     this.route.params.subscribe(params => {
       if (params['id']) {
         this.isEdit = true;
         this.postService.getItem(params['id']).subscribe((result: any) => {
           this.form.patchValue(result);
         });
-        
+      }
+    })
+
+
+  }
 
   addPost() {
     if (this.form.valid) {
-      if (this.isEdit){
+      if (this.isEdit) {
         this.postService.updateItem(this.route.snapshot.params['id'], this.form.value).subscribe({
-          next: (val: any) =>{
+          next: (val: any) => {
             this.router.navigate(['/listposts']);
-            this.snackBar.open('Updated successfully','Close',{
-              duration:3000,
-              verticalPosition:'top',
-              horizontalPosition:'end'
+            this.snackBar.open('Updated successfully', 'Close', {
+              duration: 3000,
+              verticalPosition: 'top',
+              horizontalPosition: 'end'
             });
-        },
-          error:(err:any)=>{
+          },
+          error: (err: any) => {
             console.error(err);
           }
         });
-      } else{
-        this.postService.createItem(this.form.value).subscribe({
-          next: (val: any)=>{
+      } else {
+
+        this.postNew = this.form.value;
+
+        this.postService.createItem(this.postNew).subscribe({
+          next: (val: any) => {
             this.router.navigate(['/listposts']);
-            this.snackBar.open('Created successfully', 'Close',{
-              duration:3000,
-              verticalPosition:'top',
-              horizontalPosition:'end'
+            this.snackBar.open('Created successfully', 'Close', {
+              duration: 3000,
+              verticalPosition: 'top',
+              horizontalPosition: 'end'
             });
           },
-          error:(err:any)=>{
+          error: (err: any) => {
             console.error(err);
           }
         });
       }
+    } else {
+      alert("Complete todos los campos");
     }
   }
-  back()
-  {
-    this.location.back();
-  }
 
+  back()
+    {
+      this.location.back()
+    }
 
 }
+

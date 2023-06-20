@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Post} from "../../models/Post";
+import {IPost} from "../../models/IPost";
 import {PostService} from "../../services/post.service";
-import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
   selector: 'app-list-posts',
@@ -9,7 +8,7 @@ import {MatTableDataSource} from "@angular/material/table";
   styleUrls: ['./list-posts.component.css']
 })
 export class ListPostsComponent implements OnInit {
-  posts: Post[] = [];
+  posts: IPost[] = [];
 
   constructor(private postService: PostService) {
   }

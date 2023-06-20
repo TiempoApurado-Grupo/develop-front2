@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PostService} from "../../services/post.service";
-import {Post} from "../../models/Post";
+import {IPost} from "../../models/IPost";
 import {ActivatedRoute} from "@angular/router";
 import { Location } from '@angular/common';
 
@@ -12,7 +12,7 @@ import { Location } from '@angular/common';
 })
 export class SeePostComponent implements OnInit{
 
-  post !:Post;
+  post !:IPost;
   constructor(private _servicePost: PostService,
               private route:ActivatedRoute,
               private location: Location) {
