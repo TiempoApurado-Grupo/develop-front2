@@ -4,34 +4,47 @@
   <div class="container">
     <h2>Datas of your property</h2>
     <form [formGroup]="form" (ngSubmit)="addPost()">
-      <div class="inputbox" id="title">
+      <div>
         <label>Title</label>
-        <input type="text" formControlName="title">
+        <div  id="title">
+          <input class="inputbox" type="text" formControlName="title">
+        </div>
+        <label>Description</label>
+        <div  id="description">
+          <textarea class="inputbox"   formControlName="description"></textarea>
+        </div>
       </div>
-      <div class="inputbox" id="description">
-        <textarea placeholder="Description"  formControlName="description"></textarea>
+      <div>
+        <div  id="characteristics">
+          <label>Characteristics</label>
+          <textarea class="inputbox" formControlName="characteristics"></textarea>
+        </div>
+        <div >
+          <label>Price</label>
+          <input class="inputbox" type="number" formControlName="price">
+        </div>
       </div>
-      <div class="inputbox" id="characteristics">
-        <textarea placeholder="Characteristics" formControlName="characteristics"></textarea>
+      <div>
+        <div >
+          <label>Category</label>
+          <select class="inputbox" formControlName="category">
+            <option *ngFor="let category of categories" [value]="category">
+              {{ category }}
+            </option>
+          </select>
+        </div>
+        <div  id="location">
+          <label>Location</label>
+          <textarea  class="inputbox"  formControlName="location"></textarea>
+        </div>
       </div>
-      <div class="inputbox">
-        <label>Price</label>
-        <input type="number" formControlName="price">
+      <div>
+        <div  id="imgUrl">
+          <label>Image</label>
+          <textarea class="inputbox"  formControlName="imgUrl"></textarea>
+        </div>
       </div>
-      <div class="inputbox">
-        <label>Category</label>
-        <select formControlName="category">
-          <option *ngFor="let category of categories" [value]="category">
-            {{ category }}
-          </option>
-        </select>
-      </div>
-      <div class="inputbox" id="location">
-        <textarea placeholder="Location" formControlName="location"></textarea>
-      </div>
-      <div class="inputbox" id="imgUrl">
-        <textarea placeholder="Image" formControlName="imgUrl"></textarea>
-      </div>
+
 
       <div class="actions">
         <button mat-raised-button color="warn" type="button" [mat-dialog-close]="false" routerLink="/yourposts">Cancel</button>

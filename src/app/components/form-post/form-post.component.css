@@ -8,11 +8,13 @@ main{
 .container{
   background: #5ab3d5;
   margin: 30px auto 15px;
-  border-radius: 10px;
+  border-radius: 30px;
   padding: 10px;
   width: 90%;
   max-width: 900px;
-
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
 }
 .container h2{
   text-align: center;
@@ -26,16 +28,20 @@ main{
   margin-bottom: 10px;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  color: #002C3E;
+  font-size: 1.2rem;
+  margin-right: 10px;
 }
 
-.inputbox label{
+.container label{
   color: #002C3E;
   font-weight: 500;
   font-size: 1.2rem;
   margin-right: 10px;
 }
-.inputbox input, select{
+.inputbox, select{
   background: #C9EEFF;
   border-radius: 3px;
   border: none;
@@ -44,36 +50,24 @@ main{
   width: 65%;
 }
 option{
-  background: #E7EFF6;
+  background: #C9EEFF;
   padding: 8px;
 }
-textarea{
-  margin: auto;
-  width: 70%;
-  min-height: 60px;
-  background: #C9EEFF;
-  resize: vertical;
-}
-
 .actions{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
-button{
-  width: 50%;
+.actions button{
+  width: 80%;
   max-width: 250px;
-  padding: 8px;
   margin-bottom: 10px;
   border: none;
-  background: #002C3E;
   font-size: 1.1rem;
-  color: #C9EEFF;
   font-weight: 500;
+  border-radius: 15px;
 }
-
 
 @media (min-width: 720px) {
   h2{
@@ -90,18 +84,6 @@ button{
     width: 100%;
   }
 
-#title{
-  grid-column: span 2;
-}
-#description{
-  grid-column: span 2;
-}
-#caracterist{
-  grid-row: span 2;
-}
-#location{
-  grid-column: span 2;
-}
 .actions{
   margin: 30px auto;
   width: 100%;
