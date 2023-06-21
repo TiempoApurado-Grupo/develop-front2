@@ -11,7 +11,7 @@ import {User} from "../../models/User";
 })
 export class RegisterComponent {
 
-  user = new User();
+  user!:User
 
   form:FormGroup;
   constructor(private _formB:FormBuilder,

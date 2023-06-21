@@ -31,6 +31,7 @@ form .inputbox{
   background: #5ab3d5;
   color: #002C3E;
   font-weight: bold;
+  font-size: 1rem;
 }
 textarea{
   resize: vertical;
@@ -69,6 +70,14 @@ form button{
   max-width: 200px;
 
 }
+
+label{
+  color: #002C3E;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-right: 30px;
+}
+
 @media (min-width: 720px) {
 
   .edit img{
@@ -83,12 +92,10 @@ form button{
     margin: auto;
     max-width: 700px;
     display: grid;
-    grid-template-columns:repeat(3, 1fr) ;
+    grid-template-columns:repeat(2, 1fr) ;
     gap:0.5rem
   }
-  #email{
-    grid-column: span 2;
-  }
+
   #desc{
     grid-column: span 2;
   }

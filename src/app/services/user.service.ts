@@ -55,6 +55,9 @@ export class UserService {
   idUserLoged(){
     return Number(window.sessionStorage.getItem('userLogedId'));
   }
+  logOut(){
+    window.sessionStorage.clear();
+  }
 
   //clients
   getUserClients(): Observable<number[]> {

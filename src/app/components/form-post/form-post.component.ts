@@ -7,11 +7,6 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {UserService} from "../../services/user.service";
 import {IPost} from "../../models/IPost";
 
-interface Category {
-  value: string;
-  viewValue: string;
-}
-
 @Component({
   selector: 'app-form-post',
   templateUrl: './form-post.component.html',
