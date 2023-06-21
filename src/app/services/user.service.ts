@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {map, Observable} from "rxjs";
 import {User} from "../models/User";
 import {Router} from "@angular/router";
 
@@ -22,35 +22,6 @@ export class UserService {
 
   getUserById(id:number){
     return this._http.get<User>(`http://localhost:3000/users/${id}`)
-  }
-
-
-
-  getListClientesId(id: number): number[] {
-
-    let listClientes: number[] = [];
-
-    this.getUserById(id).subscribe({
-      next: (val: User) => {
-
-        this.user = val;
-
-        console.log(this.user);
-        console.log(this.user.name);
-
-        console.log(this.user.listClientes[0])
-
-        console.log("VEGUETA");
-
-        listClientes = this.user.listClientes;
-        console.log(listClientes);
-      },
-      error: (error) => {
-        console.error(error);
-      }
-    });
-
-    return listClientes;
   }
 
 
@@ -83,6 +54,14 @@ export class UserService {
   }
   idUserLoged(){
     return Number(window.sessionStorage.getItem('userLogedId'));
+  }
+
+  //clients
+  getUserClients(): Observable<number[]> {
+    const  userId = this.idUserLoged();
+    return this.getUserById(userId).pipe(
+      map(user=>user.listClients)
+    );
   }
 
 }

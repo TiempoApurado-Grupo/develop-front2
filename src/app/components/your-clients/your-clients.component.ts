@@ -31,21 +31,20 @@ export class YourClientsComponent implements OnInit{
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort !: MatSort;
 
-  loadDatas(){
-    this._userService.getAllUsers().subscribe({
-      next:(val:any)=>{
-        this.listClients = val;
-        console.log(this.listClients);
-
-        this.dataSource = new MatTableDataSource<User>(this.listClients);
-
-        setTimeout(() => {
-          this.dataSource.paginator = this.paginator;
-          this.dataSource.sort = this.sort;
-        }, 0);
-      }
-    })
-
+  loadDatas() {
+    this._userService.getUserClients().subscribe((clientIds: number[]) => {
+      const clients: User[] = [];
+      clientIds.forEach(clientId => {
+        this._userService.getUserById(clientId).subscribe((client: User) => {
+          clients.push(client);
+          if (clients.length === clientIds.length) {
+            this.dataSource = new MatTableDataSource<User>(clients);
+            this.dataSource.paginator = this.paginator;
+            this.dataSource.sort = this.sort;
+          }
+        });
+      });
+    });
   }
 
   applyFilter(event: Event) {

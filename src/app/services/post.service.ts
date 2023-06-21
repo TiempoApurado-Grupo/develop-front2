@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
-import {Observable, switchMap} from "rxjs";
+import {map, Observable, switchMap} from "rxjs";
 import {IPost} from "../models/IPost";
 import {UserService} from "./user.service";
 
@@ -43,6 +43,13 @@ export class PostService {
   }
   deleteItem(id: number): Observable<IPost>{
     return this._http.delete<IPost>(`http://localhost:3000/posts/${id}`, this.httpOptions)
+  }
+  //posts
+  getUserPosts(): Observable<number[]> {
+    const  userId = this._userService.idUserLoged();
+    return this._userService.getUserById(userId).pipe(
+      map(user=>user.listPosts)
+    );
   }
 
 }

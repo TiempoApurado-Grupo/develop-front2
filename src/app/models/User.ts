@@ -9,7 +9,8 @@ export class User {
   gender: string;
   description: string;
   rank: number;
-  listClientes: number[];
+  listClients: number[];
+  listPosts: number[];
 
   constructor() {
     this.id = 0;
@@ -21,7 +22,8 @@ export class User {
     this.gender = '';
     this.description = '';
     this.rank = 5;
-    this.listClientes = [];
+    this.listClients = [];
+    this.listPosts = [];
   }
 
 }

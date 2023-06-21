@@ -13,6 +13,9 @@
       "listClients": [
         3,
         5
+      ],
+      "listPosts": [
+        3
       ]
     },
     {
@@ -29,6 +32,9 @@
         7,
         4,
         5
+      ],
+      "listPosts": [
+        1
       ]
     },
     {
@@ -45,6 +51,9 @@
         3,
         7,
         8
+      ],
+      "listPosts": [
+        4
       ]
     },
     {
@@ -60,6 +69,9 @@
       "listClients": [
         6,
         5,
+        2
+      ],
+      "listPosts": [
         2
       ]
     },
@@ -77,6 +89,9 @@
         1,
         2,
         5
+      ],
+      "listPosts": [
+
       ]
     },
     {
@@ -93,6 +108,9 @@
         8,
         9,
         10
+      ],
+      "listPosts": [
+
       ]
     },
     {
@@ -109,6 +127,9 @@
         5,
         6,
         7
+      ],
+      "listPosts": [
+
       ]
     },
     {
@@ -125,6 +146,9 @@
         2,
         3,
         4
+      ],
+      "listPosts": [
+
       ]
     },
     {
@@ -140,6 +164,9 @@
       "listClients": [
         1,
         5
+      ],
+      "listPosts": [
+
       ]
     },
     {
@@ -156,6 +183,9 @@
         3,
         4,
         5
+      ],
+      "listPosts": [
+
       ]
     },
     {
@@ -172,6 +202,9 @@
         3,
         4,
         5
+      ],
+      "listPosts": [
+
       ]
     }
   ],
@@ -186,7 +219,7 @@
       "category": "Departments",
       "imgUrl": "https://uploads-ssl.webflow.com/5eafe77529a4a6383291dc2e/61d46458351633a952840cd8_rent%20a%20furnished%20flat.jpg",
       "state": true,
-      "userAuthorId": 1,
+      "userAutorId": 1,
       "userRentId": 2
     },
     {
@@ -199,7 +232,7 @@
       "category": "Commercial Space",
       "imgUrl": "https://easycdn.es/4/i/seguros-para-locales-vacios-por-que-deberias-contratarlo-siempre_8328.jpg",
       "state": true,
-      "userAuthorId": 1,
+      "userAutorId": 1,
       "userRentId": 2
     },
     {
@@ -212,7 +245,7 @@
       "category": "Houses",
       "imgUrl": "https://images.rentals.ca/property-pictures/large/lorraine-qc/583721/house-6911686.jpg",
       "state": true,
-      "userAuthorId": 1,
+      "userAutorId": 1,
       "userRentId": 2
     },
     {
@@ -225,19 +258,19 @@
       "category": "commercialSpace",
       "imgUrl": "https://www.roommates.pe/wp-content/uploads/2023/05/19-450x300.jpg",
       "state": true,
-      "userAuthorId": 1,
+      "userAutorId": 1,
       "userRentId": 2
     },
     {
       "id": 5,
       "title": "Titulo 5",
       "description": "Description post 5",
-      "caracteristics": "Caracteristicas 5",
+      "characteristics": "Caracteristicas 5",
       "location": "Location 5",
       "price": 399.99,
       "category": "department",
       "imgUrl": "https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "disponible": true,
+      "state": true,
       "userAutorId": 1,
       "userRentId": -1
     },
@@ -245,12 +278,12 @@
       "id": 6,
       "title": "Titulo 6",
       "description": "Description post 6",
-      "caracteristics": "Caracteristicas 6",
+      "characteristics": "Caracteristicas 6",
       "location": "Location 6",
       "price": 199.99,
       "category": "electronics",
       "imgUrl": "https://images.pexels.com/photos/102104/pexels-photo-102104.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "disponible": true,
+      "state": true,
       "userAutorId": 2,
       "userRentId": -1
     },
@@ -258,12 +291,12 @@
       "id": 7,
       "title": "Titulo 7",
       "description": "Description post 7",
-      "caracteristics": "Caracteristicas 7",
+      "characteristics": "Caracteristicas 7",
       "location": "Location 7",
       "price": 49.99,
       "category": "clothing",
       "imgUrl": "https://images.pexels.com/photos/4283336/pexels-photo-4283336.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "disponible": true,
+      "state": true,
       "userAutorId": 3,
       "userRentId": -1
     },
@@ -271,12 +304,12 @@
       "id": 8,
       "title": "Titulo 8",
       "description": "Description post 8",
-      "caracteristics": "Caracteristicas 8",
+      "characteristics": "Caracteristicas 8",
       "location": "Location 8",
       "price": 299.99,
       "category": "furniture",
       "imgUrl": "https://images.pexels.com/photos/280471/pexels-photo-280471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "disponible": true,
+      "state": true,
       "userAutorId": 4,
       "userRentId": -1
     },
@@ -284,12 +317,12 @@
       "id": 9,
       "title": "Titulo 9",
       "description": "Description post 9",
-      "caracteristics": "Caracteristicas 9",
+      "characteristics": "Caracteristicas 9",
       "location": "Location 9",
       "price": 149.99,
       "category": "sports",
       "imgUrl": "https://images.pexels.com/photos/256370/pexels-photo-256370.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "disponible": true,
+      "state": true,
       "userAutorId": 5,
       "userRentId": -1
     },
@@ -297,12 +330,12 @@
       "id": 10,
       "title": "Titulo 10",
       "description": "Description post 10",
-      "caracteristics": "Caracteristicas 10",
+      "characteristics": "Caracteristicas 10",
       "location": "Location 10",
       "price": 999.99,
       "category": "electronics",
       "imgUrl": "https://images.pexels.com/photos/385119/pexels-photo-385119.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "disponible": true,
+      "state": true,
       "userAutorId": 6,
       "userRentId": -1
     },
@@ -314,7 +347,7 @@
       "price": 157.23,
       "imgUrl": "https://media.architecturaldigest.com/photos/6113ec258c1207bc593efffd/16:9/w_2560%2Cc_limit/Messi1.jpg",
       "category": "houses",
-      "disponible": true,
+      "state": true,
       "userAutorId": 6,
       "userRentId": -1,
       "id": 11
@@ -327,7 +360,7 @@
       "price": 10000000.99,
       "imgUrl": "https://imagenes.elpais.com/resizer/mM8Y4RBUoRYFX_IX6VtXwz5LVuA=/1960x0/cloudfront-eu-central-1.images.arcpublishing.com/prisa/G5DOXKMQRFBDLMI5L2DFBCKKNY.jpg",
       "category": "department",
-      "disponible": true,
+      "state": true,
       "userAutorId": 12,
       "userRentId": -1,
       "id": 12

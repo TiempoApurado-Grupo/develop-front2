@@ -38,21 +38,22 @@ export class YourPostsComponent implements OnInit{
 
   }
 
-  loadDatas(){
-    this._postService.getAllPosts().subscribe({
-      next:(val:any)=>{
-        this.listPosts = val;
-        console.log(this.listPosts);
-
-        this.dataSource = new MatTableDataSource<IPost>(this.listPosts);
-
-        setTimeout(() => {
-          this.dataSource.paginator = this.paginator;
-          this.dataSource.sort = this.sort;
-        }, 0);
-      }
-    })
-
+  loadDatas() {
+    console.log('hipost')
+    this._postService.getUserPosts().subscribe((postIds: number[]) => {
+      const posts: IPost[] = [];
+      postIds.forEach(postId => {
+        this._postService.getPostsById(postId).subscribe((post: IPost) => {
+          posts.push(post);
+          console.log(posts)
+          if (posts.length === postIds.length) {
+            this.dataSource = new MatTableDataSource<IPost>(posts);
+            this.dataSource.paginator = this.paginator;
+            this.dataSource.sort = this.sort;
+          }
+        });
+      });
+    });
   }
 
   applyFilter(event: Event) {
