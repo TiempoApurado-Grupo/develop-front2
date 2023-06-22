@@ -59,15 +59,15 @@ export class FormPostComponent implements OnInit {
       price: 0,
       category: '',
       imgUrl: '',
-      state: true,
-      userAutorId: Number(window.sessionStorage.getItem('userLogedId')),
+      available: true,
+      userAuthorId: this._userService.idUserLoged(),
       userRentId: -1,
     };
 
     this.route.params.subscribe(params => {
       if (params['id']) {
         this.isEdit = true;
-        this.postService.getItem(params['id']).subscribe((result: any) => {
+        this.postService.getPostsById(params['id']).subscribe((result: any) => {
           this.form.patchValue(result);
         });
       }
@@ -79,7 +79,7 @@ export class FormPostComponent implements OnInit {
   addPost() {
     if (this.form.valid) {
       if (this.isEdit) {
-        this.postService.updateItem(this.route.snapshot.params['id'], this.form.value).subscribe({
+        this.postService.updatePost(this.route.snapshot.params['id'], this.form.value).subscribe({
           next: (val: any) => {
             this.router.navigate(['/listposts']);
             this.snackBar.open('Updated successfully', 'Close', {
@@ -96,7 +96,7 @@ export class FormPostComponent implements OnInit {
 
         this.postNew = this.form.value;
 
-        this.postService.createItem(this.postNew).subscribe({
+        this.postService.addPost(this.postNew).subscribe({
           next: (val: any) => {
             this.router.navigate(['/listposts']);
             this.snackBar.open('Created successfully', 'Close', {

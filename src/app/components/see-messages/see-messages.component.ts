@@ -34,7 +34,7 @@ export class SeeMessagesComponent implements OnInit{
 
   obtenerMensajes(): void {
 
-    this._serviceMessage.getMessagesByDestinationId(Number(this._serviceUser.idUserLoged())).subscribe(
+    this._serviceMessage.getMessagesByDestinationId(this._serviceUser.idUserLoged()).subscribe(
       (messages: IMessage[]) => {
         this.myMessages = messages;
         this.obtenerAutores();
@@ -46,7 +46,7 @@ export class SeeMessagesComponent implements OnInit{
   }
 
   obtenerAutores(): void {
-    const originIds = this.myMessages.map(message => message.idOrigin);
+    const originIds = this.myMessages.map(message => message.idUserAuthor);
 
     originIds.forEach(id => {
       this._serviceUser.getUserById(id).subscribe({

@@ -32,8 +32,8 @@ export class SendMessageComponent implements OnInit{
 
     this.m = {
       content: '',
-      idOrigin: 0,
-      idDestination: 0,
+      idUserAuthor: 0,
+      idUserDestination: 0,
       read:false,
     };
   }
@@ -49,7 +49,7 @@ export class SendMessageComponent implements OnInit{
     this.route.paramMap.subscribe(params => {
 
       const Id = Number(params.get('id'));
-      this.m.idDestination = Id;
+      this.m.idUserDestination = Id;
 
       this._serviceUser.getUserById(Id).subscribe({
         next:(val:any)=>{
@@ -63,7 +63,7 @@ export class SendMessageComponent implements OnInit{
   sendMessahe(){
 
 
-      this.m.idOrigin = this._serviceUser.idUserLoged();
+      this.m.idUserAuthor = this._serviceUser.idUserLoged();
       this.m.content = this.form.get('contentMessage')?.value;
 
       this._serviceMessage.addMessage(this.m).subscribe({

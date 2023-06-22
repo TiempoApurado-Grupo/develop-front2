@@ -9,7 +9,7 @@ export interface IPost {
   price: number;
   category: string;
   imgUrl: string;
-  state: boolean;
-  userAutorId: number;
+  available: boolean;
+  userAuthorId: number;
   userRentId: number;
 }

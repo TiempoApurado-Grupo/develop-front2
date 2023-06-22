@@ -6,9 +6,9 @@
     <div class="messages">
 
       <div class="message" *ngFor="let message of myMessages">
-        <h3>{{ getAutor(message.idOrigin) }}</h3>
+        <h3>{{ getAutor(message.idUserAuthor) }}</h3>
         <p>{{ message.content }}</p>
-        <button [routerLink]="['/sendmessage/',message.idOrigin]">Reply</button>
+        <button [routerLink]="['/sendmessage/',message.idUserAuthor]">Reply</button>
       </div>
 
       <div class="noMessages" *ngIf="myMessages.length === 0">

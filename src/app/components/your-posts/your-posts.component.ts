@@ -69,7 +69,8 @@ export class YourPostsComponent implements OnInit{
     const dialogRef=this.dialog.open(ConfirmationDialogComponent);
     dialogRef.afterClosed().subscribe(result=>{
       if(result){
-        this._postService.deleteItem(id).subscribe((response:any)=>{
+
+        this._postService.deletePostById(id).subscribe((response:any)=>{
           this.listPosts=this.listPosts.filter((o:any)=>{
             return o.id !==id? o:false;
           });

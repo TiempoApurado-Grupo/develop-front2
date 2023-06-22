@@ -9,41 +9,39 @@ import {UserService} from "./user.service";
 })
 export class PostService {
 
+  baseUrl:string="http://localhost:8080/api/posts";
   constructor(private _http:HttpClient,
               private _userService: UserService) {}
 
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-    })
-  }
-
   getAllPosts():Observable<IPost>{
-    return this._http.get<IPost>('http://localhost:3000/posts');
+    return this._http.get<IPost>(this.baseUrl);
   }
 
   getPostsById(id:number){
-    return this._http.get<IPost>(`http://localhost:3000/posts/${id}`)
+    const url = `${this.baseUrl}/${id}`;
+
+    return this._http.get<IPost>(url);
   }
 
   searchPosts(filterItem: string): Observable<IPost[]> {
     const params = new HttpParams().set('q', filterItem);
-    return this._http.get<IPost[]>(`http://localhost:3000/posts?search=${filterItem}`, { params });
+    return this._http.get<IPost[]>(this.baseUrl+`?search=${filterItem}`, { params });
   }
 
-  createItem(item: any): Observable<IPost>{
-    return this._http.post<IPost>('http://localhost:3000/posts', JSON.stringify(item), this.httpOptions)
+  addPost(data:IPost){
+    return this._http.post(this.baseUrl,data);
   }
 
-  getItem(id: number): Observable<IPost>{
-    return this._http.get<IPost>(`http://localhost:3000/posts/${id}`)
+  updatePost(id:number, post:IPost){
+    const url = `${this.baseUrl}/${id}`;
+    return this._http.put(url,post);
+
   }
-  updateItem(id: number, item: any): Observable<IPost>{
-    return this._http.put<IPost>(`http://localhost:3000/posts/${id}`, JSON.stringify(item), this.httpOptions)
+  deletePostById(id:number){
+    const url = `${this.baseUrl}/${id}`;
+    return this._http.delete<IPost>(url)
   }
-  deleteItem(id: number): Observable<IPost>{
-    return this._http.delete<IPost>(`http://localhost:3000/posts/${id}`, this.httpOptions)
-  }
+
   //posts
   getUserPosts(): Observable<number[]> {
     const  userId = this._userService.idUserLoged();

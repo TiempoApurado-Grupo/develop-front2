@@ -2,7 +2,7 @@
 export interface IMessage{
   id ?: number;
   content: string;
-  idOrigin: number;
-  idDestination: number;
+  idUserAuthor: number;
+  idUserDestination: number;
   read:boolean;
 }

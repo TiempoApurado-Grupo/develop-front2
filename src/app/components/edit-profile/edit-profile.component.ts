@@ -43,11 +43,17 @@ export class EditProfileComponent implements OnInit{
 
     if(this.form.valid){
       alert('valid')
+
+      console.log(this.form.value);
+      this._userService.updateUser(this._userService.idUserLoged(),this.form.value).subscribe({
+        next:(val:any)=>{
+          alert("User eddited successfully");
+        }
+      })
+
     }else{
       alert('invalid')
     }
-
-
   }
 
 

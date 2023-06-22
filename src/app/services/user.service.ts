@@ -9,6 +9,7 @@ import {Router} from "@angular/router";
 })
 export class UserService {
 
+  baseUrl: string = "http://localhost:8080/api/users"
   users:User[]=[];
   user!: User;
 
@@ -17,17 +18,27 @@ export class UserService {
 
   }
   getAllUsers():Observable<User>{
-    return this._http.get<User>('http://localhost:3000/users');
+    return this._http.get<User>(this.baseUrl);
   }
 
-  getUserById(id:number){
-    return this._http.get<User>(`http://localhost:3000/users/${id}`)
+  getUserById(id: number) {
+    const url = `${this.baseUrl}/${id}`;
+    return this._http.get<User>(url);
   }
+
+  updateUser(id:number, data:User):Observable<any>{
+    const url = `${this.baseUrl}/${id}`;
+
+    return this._http.put(url,data);
+  }
+
+
 
 
   loginUser(email: string, pass: string) {
     this.getAllUsers().subscribe((val: any) => {
       this.users = val;
+      console.log(val);
       this.validarLogin(email, pass);
     });
   }
@@ -41,7 +52,6 @@ export class UserService {
 
     } else {
       alert("Credenciales invalidas");
-
     }
   }
 
