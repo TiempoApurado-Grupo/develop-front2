@@ -3,8 +3,8 @@
    <app-header></app-header>
     <div class="container">
       <section class="action">
-        <img src="{{post.imgUrl}} " alt="">
-        <a [routerLink]="['/seeprofile', post.id]">Ver Perfil de Autor</a>
+        <img src="{{post.imgUrl}}" alt="">
+        <a [routerLink]="['/seeprofile', post.author_id]">Ver Perfil de Autor</a>
         <button (click)="rentar()">Rent</button>
         <button class="back" (click)="volver()">Back</button>
       </section>
