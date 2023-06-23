@@ -43,7 +43,6 @@ export class UserService {
   loginUser(email: string, pass: string) {
     this.getAllUsers().subscribe((val: any) => {
       this.users = val;
-      console.log(val);
       this.validarLogin(email, pass);
     });
   }
