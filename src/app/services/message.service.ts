@@ -10,6 +10,7 @@ import {IMessage} from "../models/IMessage";
 export class MessageService {
   baseUrl: string="https://renstate.azurewebsites.net/api/messages"
 
+  //baseUrl: string=" http://localhost:8080/api/messages"
   constructor(private _http:HttpClient,) { }
 
 

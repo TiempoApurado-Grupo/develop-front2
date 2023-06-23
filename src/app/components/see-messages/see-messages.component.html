@@ -8,7 +8,7 @@
       <div class="message" *ngFor="let message of messagesForMe">
         <h3>{{message.authorName}}</h3>
         <p>{{ message.content }}</p>
-        <button [routerLink]="['/sendmessage/',message.id]">Reply</button>
+        <button [routerLink]="['/sendmessage/',message.authorId]">Reply</button>
       </div>
 
       <div class="noMessages" *ngIf="messagesForMe.length === 0">

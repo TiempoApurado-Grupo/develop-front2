@@ -7,6 +7,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MessageService} from "../../services/message.service";
 import {IMessage} from "../../models/IMessage";
 import {SendMessage} from "../../models/SendMessage";
+import {User} from "../../models/User";
 
 @Component({
   selector: 'app-send-message',
@@ -22,7 +23,7 @@ export class SendMessageComponent implements OnInit{
     authorId: 0,
   };
 
-  messageToReplay !: IMessage;
+  userToresponse!:User
 
   form:FormGroup;
   constructor(private _serviceUser: UserService,
@@ -44,11 +45,11 @@ export class SendMessageComponent implements OnInit{
 
     let idMessage
     this.route.params.subscribe(param =>{
-      idMessage = param['id'];
-      this._serviceMessage.getMessageById(Number(idMessage)).subscribe({
+      let idUser = param['id'];
+      this._serviceUser.getUserById(Number(idUser)).subscribe({
         next:(val:any)=>{
-          this.messageToReplay = val;
-          console.log(this.messageToReplay);
+          this.userToresponse = val;
+          console.log(this.userToresponse);
         }
       })
     })
@@ -57,7 +58,7 @@ export class SendMessageComponent implements OnInit{
 
 
  createMessage(){
-    this.message.recipientId = Number(this.messageToReplay.authorId);
+    this.message.recipientId = Number(this.userToresponse.id);
    this.message.authorId = this._serviceUser.idUserLoged();
    this.message.content = this.form.get('contentMessage')?.value;
  }

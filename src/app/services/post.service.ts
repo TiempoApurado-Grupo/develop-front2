@@ -8,8 +8,8 @@ import {UserService} from "./user.service";
   providedIn: 'root'
 })
 export class PostService {
-
-  baseUrl:string="https://renstate.azurewebsites.net/api/posts";
+  baseUrl: string="https://renstate.azurewebsites.net/api/posts";
+  //baseUrl: string=" http://localhost:8080/api/posts";
   constructor(private _http:HttpClient,
               private _userService: UserService) {}
 

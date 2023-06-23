@@ -1,13 +1,13 @@
 
 
-<main *ngIf="messageToReplay">
+<main *ngIf="userToresponse">
   <app-header></app-header>
   <form [formGroup]="form" (ngSubmit)="sendMessage()">
     <div class="container">
       <h2>Send Message</h2>
 
         <div class="message">
-          <h3>To: {{messageToReplay.authorName}}</h3>
+          <h3>To: {{userToresponse.name}} {{userToresponse.lastName}}</h3>
           <textarea placeholder="Write your message here min(10)" formControlName="contentMessage"></textarea>
         </div>
 

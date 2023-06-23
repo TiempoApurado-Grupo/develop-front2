@@ -28,6 +28,7 @@ export class SeePostComponent implements OnInit{
       this._servicePost.getPostsById(postId).subscribe({
         next: (val: any) => {
           this.post = val;
+          console.log(val)
         }
       });
     });
