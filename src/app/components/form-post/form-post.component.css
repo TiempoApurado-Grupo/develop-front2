@@ -68,6 +68,10 @@ option{
   font-weight: 500;
   border-radius: 15px;
 }
+textarea{
+  font-size: 0.9rem;
+  min-height: 100px;
+}
 
 @media (min-width: 720px) {
   h2{

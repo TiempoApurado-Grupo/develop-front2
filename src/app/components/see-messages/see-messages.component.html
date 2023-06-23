@@ -5,13 +5,13 @@
 
     <div class="messages">
 
-      <div class="message" *ngFor="let message of myMessages">
-        <h3>{{ getAutor(message.idUserAuthor) }}</h3>
+      <div class="message" *ngFor="let message of messagesForMe">
+        <h3>{{message.authorName}}</h3>
         <p>{{ message.content }}</p>
-        <button [routerLink]="['/sendmessage/',message.idUserAuthor]">Reply</button>
+        <button [routerLink]="['/sendmessage/',message.id]">Reply</button>
       </div>
 
-      <div class="noMessages" *ngIf="myMessages.length === 0">
+      <div class="noMessages" *ngIf="messagesForMe.length === 0">
         <h3>No tienes mensajes</h3>
       </div>
     </div>

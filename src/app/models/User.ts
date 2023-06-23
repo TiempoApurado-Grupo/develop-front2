@@ -8,9 +8,7 @@ export class User {
   age: number;
   gender: string;
   description: string;
-  rank: number;
-  listClients: number[];
-  listPosts: number[];
+  rankPoints: number;
 
   constructor() {
     this.id = 0;
@@ -21,9 +19,7 @@ export class User {
     this.age = 0;
     this.gender = '';
     this.description = '';
-    this.rank = 5;
-    this.listClients = [];
-    this.listPosts = [];
+    this.rankPoints = 5;
   }
 
 }

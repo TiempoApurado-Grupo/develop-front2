@@ -10,6 +10,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {MatDialog} from "@angular/material/dialog";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ConfirmationDialogComponent} from "../confirmation-dialog/confirmation-dialog.component";
+import {UserService} from "../../services/user.service";
 
 @Component({
   selector: 'app-your-posts',
@@ -31,7 +32,8 @@ export class YourPostsComponent implements OnInit{
               private dialog: MatDialog,
               private router: Router,
               private route: ActivatedRoute,
-              private location:Location) {}
+              private location:Location,
+              private _userServide: UserService) {}
 
   ngOnInit(): void {
     this.loadDatas();
@@ -39,21 +41,15 @@ export class YourPostsComponent implements OnInit{
   }
 
   loadDatas() {
-    console.log('hipost')
-    this._postService.getUserPosts().subscribe((postIds: number[]) => {
-      const posts: IPost[] = [];
-      postIds.forEach(postId => {
-        this._postService.getPostsById(postId).subscribe((post: IPost) => {
-          posts.push(post);
-          console.log(posts)
-          if (posts.length === postIds.length) {
-            this.dataSource = new MatTableDataSource<IPost>(posts);
-            this.dataSource.paginator = this.paginator;
-            this.dataSource.sort = this.sort;
-          }
-        });
-      });
-    });
+
+    this._postService.getPostsByAuthorId(this._userServide.idUserLoged()).subscribe({
+      next:(val:any)=>{
+      this.dataSource = new MatTableDataSource<IPost>(val);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+      }
+    })
+
   }
 
   applyFilter(event: Event) {
@@ -88,9 +84,7 @@ export class YourPostsComponent implements OnInit{
 editPost(id:number){
     this.router.navigate(['post/edit',id])
 }
-
   volver(){
     this.location.back();
   }
-
 }

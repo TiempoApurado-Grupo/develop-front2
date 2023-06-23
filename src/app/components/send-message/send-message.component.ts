@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from "../../models/User";
 import {UserService} from "../../services/user.service";
 import {PostService} from "../../services/post.service";
 import {ActivatedRoute} from "@angular/router";
@@ -7,6 +6,7 @@ import {Location} from "@angular/common";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MessageService} from "../../services/message.service";
 import {IMessage} from "../../models/IMessage";
+import {SendMessage} from "../../models/SendMessage";
 
 @Component({
   selector: 'app-send-message',
@@ -15,8 +15,14 @@ import {IMessage} from "../../models/IMessage";
 })
 export class SendMessageComponent implements OnInit{
 
-  userDestination !:User;
-  m !: IMessage;
+
+  message: SendMessage = {
+    content: '',
+    recipientId: 0,
+    authorId: 0,
+  };
+
+  messageToReplay !: IMessage;
 
   form:FormGroup;
   constructor(private _serviceUser: UserService,
@@ -30,53 +36,54 @@ export class SendMessageComponent implements OnInit{
       contentMessage: ['', [Validators.required, Validators.minLength(10)]],
     });
 
-    this.m = {
-      content: '',
-      idUserAuthor: 0,
-      idUserDestination: 0,
-      read:false,
-    };
   }
   ngOnInit(): void {
     if(!this._serviceUser.isLoged()){
       this.location.back();
     }
 
-    this.obtenerDestinationUser();
-  }
-
-  obtenerDestinationUser(){
-    this.route.paramMap.subscribe(params => {
-
-      const Id = Number(params.get('id'));
-      this.m.idUserDestination = Id;
-
-      this._serviceUser.getUserById(Id).subscribe({
+    let idMessage
+    this.route.params.subscribe(param =>{
+      idMessage = param['id'];
+      this._serviceMessage.getMessageById(Number(idMessage)).subscribe({
         next:(val:any)=>{
-          this.userDestination = val;
+          this.messageToReplay = val;
+          console.log(this.messageToReplay);
         }
       })
+    })
 
-    });
   }
 
-  sendMessahe(){
 
+ createMessage(){
+    this.message.recipientId = Number(this.messageToReplay.authorId);
+   this.message.authorId = this._serviceUser.idUserLoged();
+   this.message.content = this.form.get('contentMessage')?.value;
+ }
 
-      this.m.idUserAuthor = this._serviceUser.idUserLoged();
-      this.m.content = this.form.get('contentMessage')?.value;
+  sendMessage(){
 
-      this._serviceMessage.addMessage(this.m).subscribe({
+    if(this.form.valid){
+      this.createMessage();
+
+      console.log(this.message);
+
+      this._serviceMessage.addMessage(this.message).subscribe({
         next:(val:any)=>{
-          alert("Sended message");
+          alert("Message send successfully")
         }
       })
-    this.volver();
+      this.volver();
+
+    }else{
+      alert('Min 10 characters')
+    }
+
   }
 
   volver(){
     this.location.back();
   }
-
 
 }

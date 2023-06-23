@@ -27,10 +27,9 @@ export class MessageService {
     return this._http.post(this.baseUrl,data);
   }
 
-  getMessagesByDestinationId(idDestination: number): Observable<IMessage[]> {
-    const params = new HttpParams().set('idDestination', idDestination.toString());
+  getMessageByRecipientId(idDestination: number){
+    return this._http.get(this.baseUrl+`/recipient/${idDestination}`)
 
-    return this._http.get<IMessage[]>(this.baseUrl, { params });
   }
 
 }

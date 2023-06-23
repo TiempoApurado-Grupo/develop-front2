@@ -10,6 +10,6 @@ export interface IPost {
   category: string;
   imgUrl: string;
   available: boolean;
-  userAuthorId: number;
-  userRentId: number;
+  author_id: number;
+  renter_id: number;
 }

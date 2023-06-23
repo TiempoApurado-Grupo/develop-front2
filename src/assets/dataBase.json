@@ -210,7 +210,6 @@
   ],
   "posts": [
     {
-      "id": 1,
       "title": "Beautiful Furnished or Unfurnished Apartment at 233 Molina street",
       "description": "Nice apartment fully furnished and equipped, super located, two bedrooms, study, two bathrooms, dining room, kitchen, laundry room, garage. We have this and more apartments for rent furnished without furnishing with appliances. Contact us and find the ideal apartment for YOU!!!",
       "characteristics": "2 bedrooms, 2 separate bathrooms, has security",
@@ -218,9 +217,7 @@
       "price": 499.99,
       "category": "Departments",
       "imgUrl": "https://uploads-ssl.webflow.com/5eafe77529a4a6383291dc2e/61d46458351633a952840cd8_rent%20a%20furnished%20flat.jpg",
-      "state": true,
-      "userAutorId": 1,
-      "userRentId": 2
+      "author_Id": 1
     },
     {
       "id": 2,

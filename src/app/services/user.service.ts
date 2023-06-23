@@ -26,11 +26,16 @@ export class UserService {
     return this._http.get<User>(url);
   }
 
+  addUser(data:any){
+    return this._http.post(this.baseUrl,data);
+  }
+
   updateUser(id:number, data:User):Observable<any>{
     const url = `${this.baseUrl}/${id}`;
 
     return this._http.put(url,data);
   }
+
 
 
 
@@ -65,16 +70,13 @@ export class UserService {
   idUserLoged(){
     return Number(window.sessionStorage.getItem('userLogedId'));
   }
+  automaticLoged(id:number){
+    window.sessionStorage.setItem('userLogedId', String(id));
+  }
   logOut(){
     window.sessionStorage.clear();
   }
 
-  //clients
-  getUserClients(): Observable<number[]> {
-    const  userId = this.idUserLoged();
-    return this.getUserById(userId).pipe(
-      map(user=>user.listClients)
-    );
-  }
+
 
 }

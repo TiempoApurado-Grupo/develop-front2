@@ -5,6 +5,7 @@ import {MatSort} from "@angular/material/sort";
 import {User} from "../../models/User";
 import {UserService} from "../../services/user.service";
 import {Location} from "@angular/common";
+import {PostService} from "../../services/post.service";
 
 @Component({
   selector: 'app-your-clients',
@@ -19,6 +20,7 @@ export class YourClientsComponent implements OnInit{
   dataSource !: MatTableDataSource<User>;
 
   constructor(private _userService: UserService,
+              private _postService: PostService,
               private location:Location) {
 
   }
@@ -32,19 +34,19 @@ export class YourClientsComponent implements OnInit{
   @ViewChild(MatSort) sort !: MatSort;
 
   loadDatas() {
-    this._userService.getUserClients().subscribe((clientIds: number[]) => {
-      const clients: User[] = [];
-      clientIds.forEach(clientId => {
-        this._userService.getUserById(clientId).subscribe((client: User) => {
-          clients.push(client);
-          if (clients.length === clientIds.length) {
-            this.dataSource = new MatTableDataSource<User>(clients);
-            this.dataSource.paginator = this.paginator;
-            this.dataSource.sort = this.sort;
-          }
-        });
-      });
-    });
+
+    this._postService.getListClientsByAuthorId(this._userService.idUserLoged()).subscribe({
+      next:(val:any)=>{
+
+        this.dataSource = new MatTableDataSource<User>(val);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+      }
+    })
+
+
+
+
   }
 
   applyFilter(event: Event) {

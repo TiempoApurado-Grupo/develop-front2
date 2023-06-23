@@ -42,12 +42,14 @@ export class PostService {
     return this._http.delete<IPost>(url)
   }
 
-  //posts
-  getUserPosts(): Observable<number[]> {
-    const  userId = this._userService.idUserLoged();
-    return this._userService.getUserById(userId).pipe(
-      map(user=>user.listPosts)
-    );
+  getPostsByAuthorId(id:number){
+    const url = `${this.baseUrl}/author/${id}`;
+    return this._http.get(url);
   }
 
+
+  getListClientsByAuthorId(id:number){
+    const url = `${this.baseUrl}/authorclients/${id}`;
+    return this._http.get(url);
+  }
 }

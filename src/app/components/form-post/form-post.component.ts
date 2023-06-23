@@ -60,8 +60,8 @@ export class FormPostComponent implements OnInit {
       category: '',
       imgUrl: '',
       available: true,
-      userAuthorId: this._userService.idUserLoged(),
-      userRentId: -1,
+      author_id: this._userService.idUserLoged(),
+      renter_id: 0,
     };
 
     this.route.params.subscribe(params => {
@@ -72,8 +72,7 @@ export class FormPostComponent implements OnInit {
         });
       }
     })
-
-
+    
   }
 
   addPost() {
@@ -95,6 +94,7 @@ export class FormPostComponent implements OnInit {
       } else {
 
         this.postNew = this.form.value;
+        this.postNew.author_id = this._userService.idUserLoged();
 
         this.postService.addPost(this.postNew).subscribe({
           next: (val: any) => {
@@ -111,7 +111,7 @@ export class FormPostComponent implements OnInit {
         });
       }
     } else {
-      alert("Complete todos los campos");
+      alert("Complet the all items");
     }
   }
 

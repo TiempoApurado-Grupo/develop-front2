@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {User} from "../../models/User";
+import {UserService} from "../../services/user.service";
 
 
 @Component({
@@ -11,11 +12,11 @@ import {User} from "../../models/User";
 })
 export class RegisterComponent {
 
-  user!:User
 
   form:FormGroup;
   constructor(private _formB:FormBuilder,
-              public _router:Router,) {
+              public _router:Router,
+              private _userService:UserService) {
 
     this.form = this._formB.group({
       name: ['', Validators.required],
@@ -29,17 +30,16 @@ export class RegisterComponent {
 
     if (this.form.valid) {
       alert("VALido");
-      this.user.name=this.form.get('name')?.value;
-      this.user.lastName=this.form.get('lastName')?.value;
-      this.user.email=this.form.get('email')?.value;
-      this.user.password=this.form.get('password')?.value;
 
-      console.log(this.user);
+      this._userService.addUser(this.form.value).subscribe({
+        next:(val:any)=>{
+           this._userService.automaticLoged(val.id);
+          this._router.navigate(["/welcome"])
+        }
+      })
 
     } else {
-      alert('No valido');
+      alert('Invalid Form');
     }
-
-    this._router.navigate(["/welcome"])
   }
 }
