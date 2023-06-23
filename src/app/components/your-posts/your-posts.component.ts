@@ -77,7 +77,6 @@ export class YourPostsComponent implements OnInit{
             horizontalPosition:'end'
           });
         });
-        console.log(this.listPosts);
       }
     });
   }

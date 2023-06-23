@@ -5,7 +5,6 @@ import {ActivatedRoute} from "@angular/router";
 import {Location} from "@angular/common";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MessageService} from "../../services/message.service";
-import {IMessage} from "../../models/IMessage";
 import {SendMessage} from "../../models/SendMessage";
 import {User} from "../../models/User";
 
@@ -49,7 +48,6 @@ export class SendMessageComponent implements OnInit{
       this._serviceUser.getUserById(Number(idUser)).subscribe({
         next:(val:any)=>{
           this.userToresponse = val;
-          console.log(this.userToresponse);
         }
       })
     })
@@ -67,8 +65,6 @@ export class SendMessageComponent implements OnInit{
 
     if(this.form.valid){
       this.createMessage();
-
-      console.log(this.message);
 
       this._serviceMessage.addMessage(this.message).subscribe({
         next:(val:any)=>{

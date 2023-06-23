@@ -29,7 +29,6 @@ export class SeeProfileComponent implements OnInit{
       this._serviceUser.getUserById(this.userAutorId).subscribe({
         next:(val:any)=>{
           this.user = val;
-          console.log(this.user);
         }
       })
 

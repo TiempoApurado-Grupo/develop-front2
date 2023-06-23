@@ -35,7 +35,6 @@ export class SeeMessagesComponent implements OnInit{
     this._serviceMessage.getMessageByRecipientId(this._serviceUser.idUserLoged()).subscribe(
       (messages: any) => {
         this.messagesForMe = messages;
-        console.log(this.messagesForMe)
       },
       (error) => {
         console.error(error);

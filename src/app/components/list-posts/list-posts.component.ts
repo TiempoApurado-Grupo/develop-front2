@@ -21,7 +21,6 @@ export class ListPostsComponent implements OnInit {
     this.postService.getAllPosts().subscribe({
       next: (val: any) => {
         this.posts = val;
-        console.log(this.posts);
       }
     });
   }
