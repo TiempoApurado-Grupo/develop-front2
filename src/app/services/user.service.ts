@@ -8,7 +8,7 @@ import {Router} from "@angular/router";
   providedIn: 'root'
 })
 export class UserService {
-  baseUrl: string="https://renstate.azurewebsites.net/api/users"
+  baseUrl: string="https://rentstate.azurewebsites.net/api/users"
   //baseUrl: string=" http://localhost:8080/api/users"
   users:User[]=[];
   user!: User;
