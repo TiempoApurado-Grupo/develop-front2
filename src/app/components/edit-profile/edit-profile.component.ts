@@ -12,8 +12,8 @@ import {UserService} from "../../services/user.service";
 })
 export class EditProfileComponent implements OnInit{
 
-  genders:string[]=['Male', 'Female']
-
+  genders:string[]=['Male', 'Female', 'Other']
+  showAlert = false
   form:FormGroup;
   constructor(private location:Location,
               private _formB:FormBuilder,
@@ -25,7 +25,7 @@ export class EditProfileComponent implements OnInit{
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
-      gender: ['', [Validators.required, Validators.pattern(/^(Male|Female)$/)]],
+      gender: ['', [Validators.required, Validators.pattern(/^(Male|Female|Other)$/)]],
       description: ['', Validators.required],
       age: ['', Validators.required],
     });
@@ -40,30 +40,28 @@ export class EditProfileComponent implements OnInit{
   }
 
   updateUser(){
-
+    console.log("ok")
     if(this.form.valid){
-      alert('valid')
 
       this._userService.updateUser(this._userService.idUserLoged(),this.form.value).subscribe({
         next:(val:any)=>{
-          alert("User eddited successfully");
+            console.log("update")
         }
       })
-
     }else{
-      alert('invalid')
+      this.showAlert = true;
+      setTimeout(() => {
+        this.showAlert = false;
+      }, 2000);
     }
   }
 
-
-  volver(){
+  back(){
     this.location.back();
   }
-
   logOut(){
     this._userService.logOut();
     this._router.navigate(['/home']);
   }
-
 
 }

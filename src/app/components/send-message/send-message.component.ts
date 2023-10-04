@@ -68,13 +68,13 @@ export class SendMessageComponent implements OnInit{
 
       this._serviceMessage.addMessage(this.message).subscribe({
         next:(val:any)=>{
-          alert("Message send successfully")
+
         }
       })
       this.volver();
 
     }else{
-      alert('Min 10 characters')
+
     }
 
   }

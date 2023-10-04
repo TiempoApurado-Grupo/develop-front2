@@ -28,7 +28,7 @@ export class LoginComponent {
         this._userService.loginUser(this.form.get('email')?.value,this.form.get('password')?.value)
 
       }else{
-        alert('Form Invalid');
+
       }
 
     }

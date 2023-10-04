@@ -8,7 +8,8 @@ import {IMessage} from "../models/IMessage";
   providedIn: 'root'
 })
 export class MessageService {
-  baseUrl: string="https://rentstate.azurewebsites.net/api/messages"
+  baseUrl: string="https://roomrest.azurewebsites.net/api/messages"
+  //baseUrl: string="https://rentstate.azurewebsites.net/api/messages"
   //baseUrl: string=" http://localhost:8080/api/messages"
   constructor(private _http:HttpClient,) { }
 

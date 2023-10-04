@@ -1,23 +1,31 @@
 <app-header></app-header>
-<app-filter></app-filter>
-<app-search-post (searchQuery)="onSearch($event)"></app-search-post>
-<div class="ad">
+
+<section>
+  <div class="container">
+    <a (click)="selectCategory('commercialSpace')">Commercial Space</a>
+    <a (click)="selectCategory('rooms')">Rooms</a>
+    <a (click)="selectCategory('department')">Departments</a>
+    <a (click)="selectCategory('houses')">Houses</a>
+  </div>
+</section>
+
+
+<input class="filter-input" matInput (keyup)="applyFilter($event)" placeholder="Ex. Room">
+
+<div class="posts">
   <ng-container *ngFor="let post of posts">
-    <mat-card class="ads" style="max-width: 900px">
-      <div class="card-content">
-
-        <img class="img" src="{{ post.imgUrl }}" alt="{{ post.description }}">
-
-        <div class="text-container">
-          <mat-card-title class="title">{{ post.title }}</mat-card-title>
-          <mat-card-subtitle class="price">{{ post.price }}</mat-card-subtitle>
-          <mat-card-subtitle class="description">{{ post.description }}</mat-card-subtitle>
-          <mat-card-actions class="card-actions">
-            <button class="open-new" [routerLink]="['/seepost', post.id]">Show more</button>
-          </mat-card-actions>
-        </div>
+    <div class="card-content">
+      <img src="{{ post.imgUrl }}" alt="{{ post.description }}">
+      <div class="text-container">
+        <mat-card-title class="title">{{ post.title }}</mat-card-title>
+        <mat-card-subtitle class="price">S/ {{ post.price }}</mat-card-subtitle>
+        <mat-card-subtitle class="description">{{ post.description }}</mat-card-subtitle>
+        <mat-card-actions class="card-actions">
+          <button class="open-new" [routerLink]="['/seepost', post.id]">Show more</button>
+        </mat-card-actions>
       </div>
-    </mat-card>
+    </div>
   </ng-container>
 </div>
+
 <app-footer></app-footer>

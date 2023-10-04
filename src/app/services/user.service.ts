@@ -8,7 +8,8 @@ import {Router} from "@angular/router";
   providedIn: 'root'
 })
 export class UserService {
-  baseUrl: string="https://rentstate.azurewebsites.net/api/users"
+  baseUrl: string="https://roomrest.azurewebsites.net/api/users"
+  //baseUrl: string="https://rentstate.azurewebsites.net/api/users"
   //baseUrl: string=" http://localhost:8080/api/users"
   users:User[]=[];
   user!: User;
@@ -36,6 +37,15 @@ export class UserService {
     return this._http.put(url,data);
   }
 
+  updateRankUser(id:number, rate:number){
+
+    const url = `${this.baseUrl}/${id}/${rate}`;
+    const data = { rate: rate }
+
+    return this._http.put(url,data);
+  }
+
+
 
 
 
@@ -46,12 +56,12 @@ export class UserService {
       this.validarLogin(email, pass);
     });
   }
+
   validarLogin(email: string, pass: string) {
 
     const user = this.users.find((u: User) => u.email === email && u.password === pass);
     if (user) {
       window.sessionStorage.setItem('userLogedId', user.id.toString());
-      alert("Bienvenido")
       this._router.navigate(['/listposts'])
 
     } else {

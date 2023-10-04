@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import {MatIconModule} from "@angular/material/icon";
-import { FilterComponent } from './components/filter/filter.component';
 import { HederLogoComponent } from './components/heder-logo/heder-logo.component';
 import { RegisterComponent } from './components/register/register.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -42,7 +41,6 @@ import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    FilterComponent,
     HederLogoComponent,
     RegisterComponent,
     LoginComponent,

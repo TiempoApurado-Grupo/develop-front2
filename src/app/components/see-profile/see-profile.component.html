@@ -3,22 +3,32 @@
   <app-header></app-header>
     <div class="container">
       <div class="info">
+
         <section class="photo">
           <img src="./assets/images/userCircle.png" alt="">
-          <p>⭐⭐⭐⭐⭐</p>
+          <div class="star-container">
+            <ng-container *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
+              <mat-icon class="star" [ngClass]="{'gold-star': i < this.user.rankPoints}">star</mat-icon>
+            </ng-container>
+          </div>
           <button [routerLink]="['/sendmessage', userAutorId]">Send Message</button>
         </section>
+
         <section class="description">
           <h2>{{user.name}} {{user.lastName}}</h2>
           <p>{{user.description}}</p>
         </section>
       </div>
-      <form action="">
-        <p>⭐⭐⭐⭐⭐</p>
-        <button type="submit">Save</button>
-      </form>
 
-      <button class="back" (click)="volver()">Back</button>
+      <form action="">
+        <p>
+          <span *ngFor="let star of stars; let i = index">
+            <span [ngClass]="{'selected': i < selectedStars}" (click)="selectStars(i+1)"> <mat-icon>star</mat-icon> </span>
+          </span>
+        </p>
+        <button type="button" (click)="saveStars()">Save</button>
+      </form>
+      <button class="back" (click)="back()">Back</button>
 
     </div>
 

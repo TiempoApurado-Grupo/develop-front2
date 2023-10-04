@@ -1,3 +1,30 @@
+.star-container {
+  display: inline-block;
+}
+
+.star {
+  font-size: 24px;
+  margin-right: 4px;
+}
+
+.gold-star {
+  color: gold;
+}
+
+
+
+
+span {
+  cursor: pointer;
+  transition: 0s;
+}
+
+span.selected {
+  color: gold;
+}
+
+
+
 main{
     height: 100%;
   display: flex;

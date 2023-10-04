@@ -106,3 +106,30 @@ label{
     flex:1;
   }
 }
+
+
+.alert {
+  background-color: #ffcccc;
+  border: 1px solid #ff0000;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #ff0000;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  width: 50%;
+  height: 20%;
+  margin: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.alert-icon {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+

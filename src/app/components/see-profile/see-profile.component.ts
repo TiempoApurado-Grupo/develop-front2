@@ -11,17 +11,18 @@ import {UserService} from "../../services/user.service";
 })
 export class SeeProfileComponent implements OnInit{
 
+  stars: number[] = [1, 2, 3, 4, 5]
+  selectedStars: number = 5
+
   user !:User;
   userAutorId !: number;
   constructor(private _serviceUser: UserService,
               private route:ActivatedRoute,
               private location: Location) {
   }
-
   ngOnInit(): void {
     this.obtenerUserAutor();
   }
-
   obtenerUserAutor(){
     this.route.paramMap.subscribe(params => {
       this.userAutorId = Number(params.get('id'));
@@ -31,11 +32,26 @@ export class SeeProfileComponent implements OnInit{
           this.user = val;
         }
       })
-
     });
   }
 
-  volver(){
+  selectStars(stars: number) {
+    this.selectedStars = stars;
+  }
+
+  saveStars() {
+    this._serviceUser.updateRankUser(this.user.id, this.selectedStars).subscribe(
+        (response: any) => {
+          console.log('Rating updated successfully', response);
+          window.location.reload()
+        },
+        (error) => {
+          console.error('Error updating rating', error);
+        }
+    );
+  }
+
+  back(){
     this.location.back();
   }
 }

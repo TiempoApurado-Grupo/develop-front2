@@ -5,7 +5,7 @@
       <section class="action">
         <img src="{{post.imgUrl}}" alt="">
         <a [routerLink]="['/seeprofile', post.author_id]">Ver Perfil de Autor</a>
-        <button (click)="rentar()">Rent</button>
+        <button *ngIf="post.author_id != 1" (click)="rentar()">Rent</button>
         <button class="back" (click)="volver()">Back</button>
       </section>
       <section class="description">

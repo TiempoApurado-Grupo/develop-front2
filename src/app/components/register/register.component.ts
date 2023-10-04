@@ -29,7 +29,6 @@ export class RegisterComponent {
   addUser(){
 
     if (this.form.valid) {
-      alert("VALido");
 
       this._userService.addUser(this.form.value).subscribe({
         next:(val:any)=>{
@@ -39,7 +38,7 @@ export class RegisterComponent {
       })
 
     } else {
-      alert('Invalid Form');
+
     }
   }
 }

@@ -3,6 +3,7 @@ import {PostService} from "../../services/post.service";
 import {IPost} from "../../models/IPost";
 import {ActivatedRoute} from "@angular/router";
 import { Location } from '@angular/common';
+import {UserService} from "../../services/user.service";
 
 
 @Component({
@@ -12,14 +13,17 @@ import { Location } from '@angular/common';
 })
 export class SeePostComponent implements OnInit{
 
+  userIdLoged :number = 0
   post !:IPost;
   constructor(private _servicePost: PostService,
               private route:ActivatedRoute,
-              private location: Location) {
+              private location: Location,
+              private _userService: UserService) {
   }
 
   ngOnInit(): void {
     this.obtenerPost();
+    this.userIdLoged = this._userService.idUserLoged()
   }
 
   obtenerPost(){
@@ -34,7 +38,6 @@ export class SeePostComponent implements OnInit{
   }
 
   rentar(){
-    alert("Rentaste esta propiedad");
     this.volver();
   }
   volver(){

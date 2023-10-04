@@ -72,7 +72,7 @@ export class FormPostComponent implements OnInit {
         });
       }
     })
-    
+
   }
 
   addPost() {
@@ -111,7 +111,7 @@ export class FormPostComponent implements OnInit {
         });
       }
     } else {
-      alert("Complet the all items");
+
     }
   }
 

@@ -25,7 +25,7 @@
     <div class="actions">
       <button [routerLink]="['/yourposts']">See Your Posts</button>
       <button [routerLink]="['/yourclients']">See Your Clients</button>
-      <button class="back" (click)="volver()">Back</button>
+      <button class="back" (click)="back()">Back</button>
     </div>
 
 
@@ -33,3 +33,10 @@
 
   <app-footer></app-footer>
 </main>
+
+
+<section class="alert" *ngIf="showAlert">
+  <span class="alert-icon">Alert</span>
+  <p>Completa todos los campos para poder guardar</p>
+</section>
+
