@@ -36,6 +36,7 @@ import { ConfirmationDialogComponent } from './components/confirmation-dialog/co
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +57,7 @@ import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
     SearchPostComponent,
     HomeComponent,
     FormPostComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,7 +76,7 @@ import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
     MatOptionModule,
     MatSelectModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
