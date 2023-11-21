@@ -39,7 +39,7 @@ export class UserService {
 
   updateRankUser(id:number, rate:number){
 
-    const url = `${this.baseUrl}/${id}/${rate}`;
+    const url = `${this.baseUrl}/rate-user/${id}/${rate}`;
     const data = { rate: rate }
 
     return this._http.put(url,data);
