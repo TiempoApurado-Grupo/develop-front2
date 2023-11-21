@@ -3,14 +3,15 @@ import {HttpClient} from "@angular/common/http";
 import {map, Observable} from "rxjs";
 import {User} from "../models/User";
 import {Router} from "@angular/router";
+import {LoginCredentials} from "../models/loginCredentials";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  baseUrl: string="https://roomrest.azurewebsites.net/api/users"
+  //baseUrl: string="https://roomrest.azurewebsites.net/api/users"
   //baseUrl: string="https://rentstate.azurewebsites.net/api/users"
-  //baseUrl: string=" http://localhost:8080/api/users"
+  baseUrl: string="http://localhost:8080/api/users"
   users:User[]=[];
   user!: User;
 
@@ -31,10 +32,9 @@ export class UserService {
     return this._http.post(this.baseUrl,data);
   }
 
-  updateUser(id:number, data:User):Observable<any>{
-    const url = `${this.baseUrl}/${id}`;
+  updateUser(data:User):Observable<any>{
 
-    return this._http.put(url,data);
+    return this._http.put(this.baseUrl,data);
   }
 
   updateRankUser(id:number, rate:number){
@@ -49,24 +49,20 @@ export class UserService {
 
 
 
-
-  loginUser(email: string, pass: string) {
-    this.getAllUsers().subscribe((val: any) => {
-      this.users = val;
-      this.validarLogin(email, pass);
-    });
-  }
-
-  validarLogin(email: string, pass: string) {
-
-    const user = this.users.find((u: User) => u.email === email && u.password === pass);
-    if (user) {
-      window.sessionStorage.setItem('userLogedId', user.id.toString());
-      this._router.navigate(['/listposts'])
-
-    } else {
-      alert("Credenciales invalidas");
-    }
+  loginUser(credential: LoginCredentials) {
+    this._http.post(`${this.baseUrl}/login`, credential).subscribe(
+      (data: any) => {
+        if(data != 0){
+          this.automaticLoged(data)
+          this._router.navigate(['/welcome'])
+        }else {
+          alert("Invalid credentials. Please verify your username and password.")
+        }
+      },
+      (error) => {
+        console.error('Error:', error);
+      }
+    );
   }
 
   isLoged(){

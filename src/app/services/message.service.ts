@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
 import {IPost} from "../models/IPost";
-import {HttpClient, HttpParams} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {IMessage} from "../models/IMessage";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MessageService {
-  baseUrl: string="https://roomrest.azurewebsites.net/api/messages"
+  //baseUrl: string="https://roomrest.azurewebsites.net/api/messages"
   //baseUrl: string="https://rentstate.azurewebsites.net/api/messages"
-  //baseUrl: string=" http://localhost:8080/api/messages"
+  baseUrl: string="http://localhost:8080/api/messages"
   constructor(private _http:HttpClient,) { }
 
 

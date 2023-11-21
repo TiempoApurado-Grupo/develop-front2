@@ -1,96 +1,82 @@
-
-
-main{
-  background: #E7EFF6;
-
-}
-
-.container{
-  background: #5ab3d5;
-  margin: 30px auto 15px;
-  border-radius: 30px;
-  padding: 10px;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 90%;
-  max-width: 900px;
-  flex-direction: column;
+  margin: auto;
+}
+
+.form-container .inputs{
   display: flex;
-  justify-content: center;
-}
-.container h2{
-  text-align: center;
-  color: #002C3E;
-  font-size: 1.5rem;
-  margin: 10px auto;
-
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: auto;
 }
 
-.inputbox{
-  margin-bottom: 10px;
+.column {
+  width: 48%;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.inputbox,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  resize: none;
+  height: 100%;
+}
+
+.file-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.file-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.file-item {
+  margin: 5px;
+  border: 1px solid #ccc;
+  padding: 5px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  padding: 10px 20px;
-  color: #002C3E;
-  font-size: 1.2rem;
+}
+
+.file-preview {
+  max-width: 50px;
+  max-height: 50px;
   margin-right: 10px;
 }
 
-.container label{
-  color: #002C3E;
-  font-weight: 500;
-  font-size: 1.2rem;
-  margin-right: 10px;
-}
-.inputbox, select{
-  background: #C9EEFF;
-  border-radius: 3px;
-  border: none;
-  padding: 8px 10px;
-  font-size: 1.2rem;
-  width: 65%;
-}
-option{
-  background: #C9EEFF;
-  padding: 8px;
-}
-.actions{
+.actions {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
+  width: 100%;
 }
-.actions button{
-  width: 80%;
+
+.actions button {
+  width: 30%;
   max-width: 250px;
   margin-bottom: 10px;
   border: none;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
-  border-radius: 15px;
+  border-radius: 5px;
 }
-textarea{
-  font-size: 0.9rem;
-  min-height: 100px;
+.actions button:hover {
+  transform: scale(1.05);
 }
 
-@media (min-width: 720px) {
-  h2{
-    padding: 10px;
-  }
-  form{
-    display: grid;
-    grid-template-columns:repeat(2, 1fr) ;
-    gap:0.5rem;
-    max-width: 750px;
-    margin: auto;
-  }
-  .inputbox{
+@media (max-width: 720px) {
+  .column {
     width: 100%;
   }
-
-.actions{
-  margin: 30px auto;
-  width: 100%;
-  grid-column: span 2 ;
-}
 }

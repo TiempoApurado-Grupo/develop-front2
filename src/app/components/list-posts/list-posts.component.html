@@ -15,7 +15,7 @@
 <div class="posts">
   <ng-container *ngFor="let post of posts">
     <div class="card-content">
-      <img src="{{ post.imgUrl }}" alt="{{ post.description }}">
+      <img src="{{ post.imageUrls[0]}}" alt="{{ post.description }}">
       <div class="text-container">
         <mat-card-title class="title">{{ post.title }}</mat-card-title>
         <mat-card-subtitle class="price">S/ {{ post.price }}</mat-card-subtitle>

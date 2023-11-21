@@ -8,7 +8,7 @@ export interface IPost {
   location: string;
   price: number;
   category: string;
-  imgUrl: string;
+  imageUrls: string[];
   available: boolean;
   author_id: number;
   renter_id: number;

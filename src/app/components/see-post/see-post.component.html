@@ -3,7 +3,7 @@
    <app-header></app-header>
     <div class="container">
       <section class="action">
-        <img src="{{post.imgUrl}}" alt="">
+        <img src="{{post.imageUrls[0]}}" alt="">
         <a [routerLink]="['/seeprofile', post.author_id]">Ver Perfil de Autor</a>
         <button *ngIf="post.author_id != 1" (click)="rentar()">Rent</button>
         <button class="back" (click)="volver()">Back</button>

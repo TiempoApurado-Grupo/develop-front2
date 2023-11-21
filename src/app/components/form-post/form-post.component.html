@@ -1,64 +1,69 @@
-
 <main>
   <app-header></app-header>
   <div class="container">
     <h2>Datas of your property</h2>
-    <form [formGroup]="form" (ngSubmit)="addPost()">
-      <div>
-        <label>Title</label>
-        <div  id="title">
-          <input class="inputbox" type="text" formControlName="title">
-        </div>
-        <label>Description</label>
-        <div  id="description">
-          <textarea class="inputbox"   formControlName="description"></textarea>
-        </div>
-      </div>
-      <div>
-        <div  id="characteristics">
-          <label>Characteristics</label>
-          <textarea class="inputbox" formControlName="characteristics"></textarea>
-        </div>
-        <div >
-          <label>Price</label>
-          <input class="inputbox" type="number" formControlName="price">
-        </div>
-      </div>
-      <div>
-        <div >
-          <label>Category</label>
-          <select class="inputbox" formControlName="category">
-            <option *ngFor="let category of categories" [value]="category">
-              {{ category }}
-            </option>
-          </select>
-        </div>
-        <div  id="location">
-          <label>Location</label>
-          <textarea  class="inputbox"  formControlName="location"></textarea>
-        </div>
-      </div>
-      <div>
-        <div  id="imgUrl">
-          <label>Image Url</label>
-          <textarea class="inputbox"  formControlName="imgUrl" ></textarea>
-        </div>
-      </div>
+    <form [formGroup]="form" (ngSubmit)="addPost()" class="form-container">
 
+      <section class="inputs">
+        <div class="column">
+          <div class="form-group">
+            <label>Title</label>
+            <input class="inputbox" type="text" formControlName="title">
+          </div>
 
+          <div class="form-group">
+            <label>Description</label>
+            <textarea class="inputbox" formControlName="description"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Characteristics</label>
+            <textarea class="inputbox" formControlName="characteristics"></textarea>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="form-group">
+            <label>Price</label>
+            <input class="inputbox" type="number" formControlName="price">
+          </div>
+
+          <div class="form-group">
+            <label>Category</label>
+            <select class="inputbox" formControlName="category">
+              <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Location</label>
+            <textarea class="inputbox" formControlName="location"></textarea>
+          </div>
+          <div *ngIf="isEdit">
+            <img src="">
+          </div>
+        </div>
+
+        <div class="form-group file-group">
+          <label>Upload Image</label>
+          <input type="file" (change)="handleFileInput($event)" accept="image/*">
+          <div class="file-list">
+            <div *ngFor="let file of filesArray" class="file-item" >
+              <img *ngIf="isImage(file)" [src]="getPreviewUrl(file)" alt="File Preview" class="file-preview">
+            </div>
+          </div>
+        </div>
+      </section>
       <div class="actions">
-        <button mat-raised-button color="warn" type="button" [mat-dialog-close]="false" routerLink="/yourposts">Cancel</button>
         <button mat-raised-button color="primary" type="submit">
-        {{form.value.id? 'Update':'IPost'}}
-        <mat-icon>{{form.value.id? 'edit':'add'}}</mat-icon>
-
+          {{ form.value.id ? 'Update' : 'Post' }}
+          <mat-icon>{{ form.value.id ? 'edit' : 'add' }}</mat-icon>
         </button>
-
-        <button mat-raised-button color="primary" type="button" class="back" (click)="back()">Back!</button>
+        <button mat-raised-button color="warn" type="button" [mat-dialog-close]="false"
+                routerLink="/yourposts">Cancel</button>
       </div>
     </form>
   </div>
 
   <app-footer></app-footer>
-
 </main>

@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {User} from "../../models/User";
 import {UserService} from "../../services/user.service";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-edit-profile',
@@ -18,13 +19,13 @@ export class EditProfileComponent implements OnInit{
   constructor(private location:Location,
               private _formB:FormBuilder,
               private _router:Router,
-              private _userService:UserService) {
+              private _userService:UserService,
+              private snackBar: MatSnackBar,) {
 
     this.form = this._formB.group({
       name: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
       gender: ['', [Validators.required, Validators.pattern(/^(Male|Female|Other)$/)]],
       description: ['', Validators.required],
       age: ['', Validators.required],
@@ -42,10 +43,16 @@ export class EditProfileComponent implements OnInit{
   updateUser(){
     console.log("ok")
     if(this.form.valid){
-
-      this._userService.updateUser(this._userService.idUserLoged(),this.form.value).subscribe({
+      var user:User
+      user = this.form.value
+      user.id = this._userService.idUserLoged()
+      this._userService.updateUser(user).subscribe({
         next:(val:any)=>{
-            console.log("update")
+          this.snackBar.open('Updated successfully', 'Close', {
+            duration: 3000,
+            verticalPosition: 'top',
+            horizontalPosition: 'end'
+          });
         }
       })
     }else{
